@@ -1,0 +1,382 @@
+// Link font override
+a {
+  line-height: 1.6 !important;
+  letter-spacing: 0.0625rem !important; //1px
+}
+// Card and accordion hover effect: muted2 on hover
+.card:hover,
+.accordion-item:hover,
+.accordion-item:focus-within {
+  background-color: $gray-200;
+}
+
+// Accordion icon size and color
+$accordion-icon-size: 2rem !default; //32px
+$accordion-icon-bg: $gray-100 !default;
+
+// Rounding and margins
+$accordion-icon-radius: 50% !default;
+$accordion-icon-margin-left: 1.5rem !default;
+
+.accordion-button::after {
+  display: none;
+}
+.accordion-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0 !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+
+  .accordion-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: $accordion-icon-size;
+    height: $accordion-icon-size;
+    background-color: $accordion-icon-bg;
+    color: $accordion-icon-color;
+    border-radius: $accordion-icon-radius;
+    margin-left: $accordion-icon-margin-left;
+
+    .icon {
+      display: block;
+    }
+
+    .icon-minus {
+      display: none;
+    }
+  }
+
+  &:not(.collapsed) .icon-plus {
+    display: none;
+  }
+
+  &:not(.collapsed) .icon-minus {
+    display: block;
+  }
+}
+
+.accordion-button:focus,
+.accordion-button:active {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.accordion-item {
+  margin-bottom: 1.5rem;
+  border: none;
+  padding: 32px 24px 32px 32px;
+  transition: background 0.2s;
+}
+.accordion-item.open {
+  background-color: $gray-200 !important;
+}
+.accordion-item.open .accordion-button {
+  background-color: transparent !important;
+}
+
+// Heading sizes, line heights, and letter spacing
+.display-1 {
+  line-height: 1;
+  letter-spacing: 0.0625rem;
+  font-size: map-get($display-font-sizes, 1);
+}
+
+.display-2 {
+  line-height: 1;
+  letter-spacing: 0.0625rem;
+  font-size: map-get($display-font-sizes, 2);
+}
+
+.display-3 {
+  line-height: 1.1;
+  letter-spacing: 0;
+  font-size: map-get($display-font-sizes, 3);
+}
+
+.display-4 {
+  line-height: 1.2;
+  letter-spacing: 0;
+  font-size: map-get($display-font-sizes, 4);
+}
+
+// Bootstrap h2–h6 overrides
+$h1-line-height: 1.1 !important;
+$h1-letter-spacing: 0.0625rem; //1px
+
+$h2-letter-spacing: 0.0625rem; //1px
+
+$h3-letter-spacing: 0.0625rem; //1px
+
+$h4-letter-spacing: 0.0625rem; //1px
+
+$h6-letter-spacing: 0.0625rem;
+
+// Override h1-h6 line-height and letter-spacing
+h1,
+.h1 {
+  line-height: $h1-line-height;
+  letter-spacing: $h1-letter-spacing;
+}
+
+h2,
+.h2 {
+  letter-spacing: $h2-letter-spacing;
+}
+h3,
+.h3 {
+  letter-spacing: $h3-letter-spacing;
+}
+h4,
+.h4 {
+  letter-spacing: $h4-letter-spacing;
+}
+h6,
+.h6 {
+  letter-spacing: $h6-letter-spacing;
+}
+
+// Text sizes, line heights, and letter spacing
+
+$text-xlarge-font-size: 2rem; //32px
+
+$text-large-font-size: 1.375rem; //22px
+$text-large-letter-spacing: 0.0625rem; //1px
+
+$text-default-font-size: 1.125rem; //18px
+$text-default-letter-spacing: 0.062em; //1px
+
+$text-small-letter-spacing: 0.03125rem; //0.5px
+
+$text-xsmall-line-height: 1.8;
+
+// Meta text
+$text-meta-letter-spacing: 0.0625rem; //1px
+
+$text-meta-small-font-size: 0.75rem; //12px
+$text-meta-small-letter-spacing: 0.03125rem; //0.5px
+
+$text-meta-link-font-size: 0.8125rem; //13px
+
+// Custom text classes
+.text-xlarge {
+  font-size: $text-xlarge-font-size;
+}
+.text-large {
+  font-size: $text-large-font-size;
+  letter-spacing: $text-large-letter-spacing;
+}
+.text-default {
+  font-size: $text-default-font-size;
+  letter-spacing: $text-default-letter-spacing;
+}
+.text-small {
+  letter-spacing: $text-small-letter-spacing;
+}
+.text-xsmall {
+  line-height: $text-xsmall-line-height;
+}
+// Meta text
+.text-meta {
+  letter-spacing: $text-meta-letter-spacing;
+}
+.text-meta-small {
+  font-size: $text-meta-small-font-size;
+  letter-spacing: $text-meta-small-letter-spacing;
+}
+.text-meta-link {
+  font-size: $text-meta-link-font-size;
+}
+
+// Custom checkbox styles
+.form-check-input[type="checkbox"] {
+  border: 1.5px solid $black;
+  background-color: $white;
+  width: 1em;
+  height: 1em;
+  border-radius: 4px;
+  box-shadow: none;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.form-check-input[type="checkbox"]:checked {
+  background-color: $white;
+  border-color: $black;
+  /* SVG checkmark in your primary color */
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 8.5L7 11.5L12 5.5' stroke='%236eb5b2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1em 1em;
+}
+
+// Custom icon sizes
+.icon-20 {
+  font-size: 1.25rem; //20px
+  vertical-align: middle;
+  line-height: 1;
+  display: inline-block;
+}
+.icon-24 {
+  font-size: 1.5rem; //24px
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon-32 {
+  font-size: 2rem; //32px
+  vertical-align: middle;
+  line-height: 1;
+  display: inline-block;
+}
+
+// Dropdown
+.dropdown.show .dropdown-toggle {
+  background-color: $senioangel-green;
+  color: $gray-50;
+  border: none;
+}
+.dropdown-menu {
+  width: 100%;
+  min-width: unset;
+}
+.dropdown-toggle {
+  background-color: $body-secondary-bg;
+  color: $body-color;
+
+  &:hover,
+  &:focus {
+    background-color: $senioangel-green;
+    color: $gray-50;
+  }
+}
+
+// Custom dropdown select component
+.custom-select {
+  position: relative;
+  width: 100%;
+
+  .custom-select__button {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-family: $font-family-monospace;
+    font-size: 0.875rem; // 14px - text-meta
+    font-weight: 400;
+    line-height: 1.6; // lh-lg
+    letter-spacing: 0.0625rem; // 1px
+    text-transform: uppercase;
+    text-align: left;
+    color: $body-color;
+    background-color: $gray-100;
+    border: 1px solid $gray-300;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $gray-200;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $senioangel-green;
+      box-shadow: 0 0 0 0.2rem rgba($senioangel-green, 0.25);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid $gray-800;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    &.active::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+
+  .custom-select__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: $white;
+    border: 1px solid $gray-300;
+    border-top: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  .custom-select__option {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    font-family: $font-family-monospace;
+    font-size: 0.875rem; // 14px - text-meta
+    font-weight: 400;
+    line-height: 1.6; // lh-lg
+    letter-spacing: 0.0625rem; // 1px
+    text-transform: uppercase;
+    text-align: left;
+    color: $body-color;
+    background-color: $body-secondary-bg;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $senioangel-green;
+      color: $gray-50;
+    }
+
+    &.selected {
+      background-color: $senioangel-green;
+      color: $gray-50;
+    }
+  }
+}
+
+// Floating label support for custom select
+.form-floating .custom-select {
+  .custom-select__button {
+    padding-top: 1.625rem; // 26px
+    padding-bottom: 0.625rem; // 10px
+  }
+
+  .custom-select__label {
+    position: absolute;
+    top: 0.625rem; // 10px
+    left: 1.25rem; // 20px
+    font-family: $font-family-monospace;
+    font-size: 0.875rem; // 14px - text-meta
+    font-weight: 400;
+    line-height: 1.6; // lh-lg
+    letter-spacing: 0.0625rem; // 1px
+    text-transform: uppercase;
+    color: $gray-600;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+
+    &.active {
+      color: $senioangel-green;
+      transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+    }
+  }
+}
