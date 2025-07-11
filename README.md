@@ -52,3 +52,26 @@ gh-page/
 3. Öffnen Sie `index.html` oder `styleguide.html` im Browser
 
 Die kompilierten CSS-Dateien werden im `assets/css/`-Ordner gespeichert.
+
+## GitHub Pages Setup
+
+### Option 1: Automatisches Deployment (Empfohlen)
+1. Aktivieren Sie GitHub Pages in Ihren Repository-Einstellungen
+2. Wählen Sie "Deploy from a branch" 
+3. Wählen Sie den `gh-pages` Branch
+4. Das GitHub Actions Workflow kompiliert automatisch die SCSS-Dateien
+
+### Option 2: Manuelles Deployment
+1. Kompilieren Sie die SCSS-Dateien: `./build.sh build`
+2. Committen Sie die generierten CSS-Dateien:
+   ```bash
+   git add assets/css/bootstrap.css
+   git commit -m "Build SCSS"
+   git push
+   ```
+3. Aktivieren Sie GitHub Pages für den main/master Branch
+
+### Wichtige Hinweise
+- Die CSS-Dateien müssen im Repository enthalten sein (nicht in .gitignore)
+- Source Maps werden ignoriert, um das Repository sauber zu halten
+- GitHub Actions kompiliert automatisch bei jedem Push
