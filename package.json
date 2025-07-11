@@ -1,0 +1,22 @@
+{
+  "name": "gh-page",
+  "version": "1.0.0",
+  "description": "GitHub Pages mit Bootstrap SCSS",
+  "main": "index.html",
+  "scripts": {
+    "build": "sass scss/bootstrap.scss:assets/css/bootstrap.css --style=compressed",
+    "build:dev": "sass scss/bootstrap.scss:assets/css/bootstrap.css --style=expanded --source-map",
+    "watch": "sass scss/bootstrap.scss:assets/css/bootstrap.css --watch --style=expanded --source-map",
+    "clean": "rm -rf assets/css/*.css assets/css/*.css.map"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  },
+  "keywords": [
+    "bootstrap",
+    "scss",
+    "github-pages"
+  ],
+  "author": "",
+  "license": "MIT"
+} 
