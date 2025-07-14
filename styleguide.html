@@ -18,6 +18,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/use-bootstrap-tag@2.2.2/dist/use-bootstrap-tag.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container mt-4">
@@ -448,6 +452,22 @@
         </div>
       </div>
 
+      <div class="mb-4">
+        <label
+          for="tags-input"
+          class="form-label text-uppercase text-meta font-monospace fs-sm"
+        >
+          Betreuung
+        </label>
+        <input
+          type="text"
+          id="tags-input"
+          class="form-control font-monospace text-uppercase"
+          placeholder="z. B. 24/7 Betreuung, flexibel Einsatz, Notfalleinsatz, Nachtschicht"
+          value=""
+        />
+      </div>
+
       <!-- Pagination with Previous/Next -->
       <div class="mb-6">
         <h4 class="mb-3">Pagination with Previous/Next</h4>
@@ -528,9 +548,25 @@
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/use-bootstrap-tag@2.2.2/dist/use-bootstrap-tag.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        // Initialize tags input
+        const input = document.getElementById("tags-input");
+        if (input) {
+          UseBootstrapTag(input, {
+            tagClass: "badge bg-senioangel-green me-1 mb-1",
+            confirmKeys: [13, 44], // Enter и запятая
+            separators: [",", ";", " "],
+            maxTags: 10,
+            minLength: 2,
+            allowDuplicates: false,
+            allowEmptyTags: false,
+          });
+        }
+
         // Accordion functionality
         var items = document.querySelectorAll(".accordion-item");
         var accordions = document.querySelectorAll(".accordion-collapse");
@@ -618,5 +654,6 @@
         });
       });
     </script>
+    <script></script>
   </body>
 </html>
