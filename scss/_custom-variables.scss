@@ -410,3 +410,10 @@ $text-meta-link-font-size: 0.8125rem; //13px
     }
   }
 }
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color}:hover,
+  .btn-outline-#{$color}:focus,
+  .btn-outline-#{$color}:active {
+    color: $gray-50 !important;
+  }
+}
