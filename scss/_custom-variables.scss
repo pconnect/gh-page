@@ -421,6 +421,9 @@ $text-meta-link-font-size: 0.8125rem; //13px
 // Offcanvas
 // Offcanvas toggle
 .btn-offcanvas-toggle {
+  background-color: $secondary;
+  color: $gray-50;
+
   &:hover,
   &:focus {
     background-color: $senioangel-green;
@@ -450,24 +453,26 @@ $text-meta-link-font-size: 0.8125rem; //13px
 // Offcanvas меню
 .offcanvas {
   .offcanvas-body {
-    a,
-    button {
-      &:hover,
-      &:focus {
-        background-color: $senioangel-green;
-        color: $gray-50;
-        outline: none;
+    a.btn,
+    button.btn {
+      &.bg-body-secondary {
+        background-color: $body-secondary-bg;
+
+        &:hover,
+        &:focus {
+          background-color: $senioangel-green !important;
+          color: $gray-50 !important;
+        }
       }
     }
     .btn-link {
       color: $body-color;
       background-color: $body-secondary-bg;
-      text-decoration: none;
 
       &:hover,
       &:focus {
-        background-color: $senioangel-green;
-        color: $gray-50;
+        background-color: $senioangel-green !important;
+        color: $gray-50 !important;
       }
     }
     .collapse {
