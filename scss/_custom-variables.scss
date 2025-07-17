@@ -430,7 +430,6 @@ $text-meta-link-font-size: 0.8125rem; //13px
     outline: none;
   }
 
-  // Стили для иконки бургера (три полоски)
   .burger-icon {
     &::before,
     &::after {
@@ -450,7 +449,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
   }
 }
 
-// Offcanvas меню
+// Offcanvas menu
 .offcanvas {
   .offcanvas-body {
     a.btn,
