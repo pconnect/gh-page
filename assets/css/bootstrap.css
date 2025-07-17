@@ -13371,28 +13371,9 @@ h6,
   color: #f4f4f4 !important;
 }
 
-.btn-offcanvas-toggle {
-  background-color: #263251;
-  border: none;
-  width: 40px;
-  height: 40px;
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
 .btn-offcanvas-toggle:hover, .btn-offcanvas-toggle:focus {
   background-color: #6eb5b2;
   outline: none;
-}
-.btn-offcanvas-toggle .burger-icon {
-  width: 22px;
-  height: 2px;
-  background-color: #f4f4f4;
-  position: relative;
-  transition: background-color 0.3s ease-in-out;
 }
 .btn-offcanvas-toggle .burger-icon::before, .btn-offcanvas-toggle .burger-icon::after {
   content: "";
@@ -13403,42 +13384,31 @@ h6,
   transition: background-color 0.3s ease-in-out;
 }
 .btn-offcanvas-toggle .burger-icon::before {
-  top: -7px;
+  top: -6px;
 }
 .btn-offcanvas-toggle .burger-icon::after {
-  top: 7px;
+  top: 6px;
 }
 
-.offcanvas {
-  background-color: #f5f5f5;
-}
-.offcanvas .offcanvas-body {
-  padding: 1rem;
-}
-.offcanvas .offcanvas-body a,
-.offcanvas .offcanvas-body button {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem;
-  font-family: "Roboto Mono", monospace;
-  font-size: 0.875rem;
-  font-weight: 400;
-  letter-spacing: 0.0625rem;
-  text-transform: uppercase;
-  color: #1a1a1a;
-  background-color: #e4e4e4;
-  border: none;
-  text-align: left;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  cursor: pointer;
-}
 .offcanvas .offcanvas-body a:hover, .offcanvas .offcanvas-body a:focus,
 .offcanvas .offcanvas-body button:hover,
 .offcanvas .offcanvas-body button:focus {
   background-color: #6eb5b2;
   color: #f4f4f4;
   outline: none;
-  border: none;
+}
+.offcanvas .offcanvas-body .btn-link {
+  color: #1a1a1a;
+  background-color: #e4e4e4;
+  text-decoration: none;
+}
+.offcanvas .offcanvas-body .btn-link:hover, .offcanvas .offcanvas-body .btn-link:focus {
+  background-color: #6eb5b2;
+  color: #f4f4f4;
+}
+.offcanvas .offcanvas-body .collapse a:hover, .offcanvas .offcanvas-body .collapse a:focus {
+  background-color: #6eb5b2;
+  color: #f4f4f4;
 }
 
 /*# sourceMappingURL=bootstrap.css.map */

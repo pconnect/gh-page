@@ -421,17 +421,6 @@ $text-meta-link-font-size: 0.8125rem; //13px
 // Offcanvas
 // Offcanvas toggle
 .btn-offcanvas-toggle {
-  background-color: $secondary; // senioangel-blue
-  border: none;
-  width: 40px;
-  height: 40px;
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-
   &:hover,
   &:focus {
     background-color: $senioangel-green;
@@ -440,12 +429,6 @@ $text-meta-link-font-size: 0.8125rem; //13px
 
   // Стили для иконки бургера (три полоски)
   .burger-icon {
-    width: 22px;
-    height: 2px;
-    background-color: $gray-50;
-    position: relative;
-    transition: background-color 0.3s ease-in-out;
-
     &::before,
     &::after {
       content: "";
@@ -456,44 +439,44 @@ $text-meta-link-font-size: 0.8125rem; //13px
       transition: background-color 0.3s ease-in-out;
     }
     &::before {
-      top: -7px;
+      top: -6px;
     }
     &::after {
-      top: 7px;
+      top: 6px;
     }
   }
 }
 
 // Offcanvas меню
 .offcanvas {
-  background-color: $body-bg; // или твой фон меню
-
   .offcanvas-body {
-    padding: 1rem;
-
     a,
     button {
-      display: block;
-      width: 100%;
-      padding: 0.5rem 1rem;
-      font-family: $font-family-monospace;
-      font-size: 0.875rem;
-      font-weight: 400;
-      letter-spacing: 0.0625rem;
-      text-transform: uppercase;
-      color: $body-color; // начальный серый цвет
-      background-color: $body-secondary-bg;
-      border: none;
-      text-align: left;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      cursor: pointer;
-
       &:hover,
       &:focus {
         background-color: $senioangel-green;
         color: $gray-50;
         outline: none;
-        border: none;
+      }
+    }
+    .btn-link {
+      color: $body-color;
+      background-color: $body-secondary-bg;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        background-color: $senioangel-green;
+        color: $gray-50;
+      }
+    }
+    .collapse {
+      a {
+        &:hover,
+        &:focus {
+          background-color: $senioangel-green;
+          color: $gray-50;
+        }
       }
     }
   }
