@@ -22,6 +22,76 @@
       href="https://cdn.jsdelivr.net/npm/use-bootstrap-tag@2.2.2/dist/use-bootstrap-tag.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="assets/css/flaticon_aid.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome-pro.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+
+    <style>
+      /* Back to top button */
+      .back-to-top-wrapper {
+        position: fixed;
+        right: 50px;
+        bottom: 0;
+        height: 44px;
+        width: 44px;
+        z-index: 99;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-out;
+      }
+
+      @media (max-width: 575px) {
+        .back-to-top-wrapper {
+          right: 20px;
+          bottom: 20px;
+        }
+      }
+
+      .back-to-top-wrapper.back-to-top-btn-show {
+        visibility: visible;
+        opacity: 1;
+        bottom: 50px;
+      }
+
+      .back-to-top-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        transition: all 0.3s ease-out;
+      }
+
+      .back-to-top-btn:hover {
+        transform: translateY(-4px);
+      }
+
+      /* Arrow animation */
+      .circle-container {
+        position: relative;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .circle-bg {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px solid currentColor;
+      }
+
+      .fly-arrow-inside {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 1rem;
+        color: currentColor;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        pointer-events: none;
+      }
+    </style>
   </head>
   <body>
     <div class="container mt-4">
@@ -86,24 +156,331 @@
 
       <!-- Icon Colors -->
       <h3 class="mt-4 text-center">Icons</h3>
-      <div class="d-flex gap-2">
+      <h4>icons with animation</h4>
+      <div class="d-flex gap-6">
+        <a
+          href="#"
+          class="link-with-arrow d-flex align-items-center text-decoration-none text-meta lh-lg small text-uppercase font-monospace"
+          ><div class="circle-container me-2">
+            <div class="circle-bg"></div>
+            <i class="bi bi-arrow-up-right fly-arrow-inside"></i>
+          </div>
+          Read More</a
+        >
+
         <div
-          class="border border-white rounded-circle d-flex justify-content-center align-items-center"
+          class="circle-down-container border border-white rounded-circle d-flex justify-content-center align-items-center position-relative overflow-hidden"
           style="width: 48px; height: 48px"
         >
-          <i class="bi bi-arrow-down icon-20"></i>
+          <i class="bi bi-arrow-down fly-arrow-down"></i>
         </div>
       </div>
-      <div class="d-flex gap-2">
-        <div
-          class="bg-body-secondary border-0 rounded-circle d-flex justify-content-center align-items-center"
-          style="width: 48px; height: 48px"
-        >
-          <i class="bi bi-twitter icon-20"></i>
+
+      <h4 class="mt-4">icons without animation and different sizes</h4>
+      <div class="d-flex flex-column gap-2 mt-4">
+        <div class="d-flex gap-2 align-items-center">
+          <div
+            class="bg-body-secondary border-0 rounded-circle d-flex justify-content-center align-items-center"
+            style="width: 48px; height: 48px"
+          >
+            <a
+              href="#"
+              class="text-decoration-none"
+              aria-label="Learn more about Video Production"
+              ><i class="bi bi-arrow-right icon-20"></i>
+            </a>
+          </div>
+          <h5>48*48</h5>
+        </div>
+
+        <div class="d-flex gap-2 align-items-center">
+          <i class="bi bi-arrow-up-right-circle text-white icon-32"></i>
+          <h5 class="mb-0">32*32</h5>
+        </div>
+
+        <div class="d-flex gap-2 align-items-center">
+          <i class="bi bi-arrow-up-right-circle icon-32"></i>
+          <h5 class="mb-0">32*32</h5>
+        </div>
+
+        <div class="d-flex gap-2 align-items-center">
+          <i class="bi bi-instagram icon-24"></i>
+          <h5 class="mb-0">24*24</h5>
+        </div>
+
+        <div class="d-flex gap-2 align-items-center">
+          <i class="bi bi-facebook icon-20"></i>
+          <h5 class="mb-0">20*20</h5>
+        </div>
+      </div>
+
+      <!-- SA-Box icons -->
+      <h2 class="mt-4">SenioAngel icons</h2>
+      <h3 class="h5 text-uppercase text-meta font-monospace my-2">
+        FontAwesome Icons
+      </h3>
+
+      <div class="d-flex flex-wrap gap-4 align-items-start">
+        <div class="text-center">
+          <i class="far fa-bars"></i>
+
+          <div class="small text-muted mt-1">far fa-bars</div>
+        </div>
+        <div class="text-center">
+          <i class="fas fa-plus"></i>
+          <div class="small text-muted mt-1">fas fa-plus</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fas fa-chevron-down"></i>
+          <div class="small text-muted mt-1">fas fa-chevron-down</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fa-solid fa-circle-plus"></i>
+          <div class="small text-muted mt-1">fa-solid fa-circle-plus</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fa fa-paper-plane"></i>
+          <div class="small text-muted mt-1">fa fa-paper-plane</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fas fa-times"></i>
+          <div class="small text-muted mt-1">fas fa-times</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fa-regular fa-angle-up"></i>
+          <div class="small text-muted mt-1">fa-regular fa-angle-up</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fa fa-trash"></i>
+          <div class="small text-muted mt-1">fa fa-trash</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fas fa-award"></i>
+          <div class="small text-muted mt-1">fas fa-award</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fas fa-clipboard-check"></i>
+          <div class="small text-muted mt-1">fas fa-clipboard-check</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fas fa-magnifying-glass"></i>
+          <div class="small text-muted mt-1">fas fa-magnifying-glass</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fas fa-truck"></i>
+          <div class="small text-muted mt-1">fas fa-truck</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fas fa-star"></i>
+          <div class="small text-muted mt-1">fas fa-star</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fas fa-sync-alt"></i>
+          <div class="small text-muted mt-1">fas fa-sync-alt</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <div class="small text-muted mt-1">fa-solid fa-cart-shopping</div>
+        </div>
+
+        <div class="text-center">
+          <i class="far fa-play text-black"></i>
+          <div class="small text-muted mt-1">far fa-play</div>
+        </div>
+
+        <div class="text-center">
+          <i class="far fa-badge-check"></i>
+          <div class="small text-muted mt-1">far fa-badge-check</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fa-brands fa-instagram"></i>
+          <div class="small text-muted mt-1">fa-brands fa-instagram</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fa-brands fa-facebook"></i>
+          <div class="small text-muted mt-1">fa-brands fa-facebook</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fa-brands fa-youtube"></i>
+          <div class="small text-muted mt-1">fa-brands fa-youtube</div>
+        </div>
+
+        <div class="text-center">
+          <i class="fa-brands fa-tiktok"></i>
+          <div class="small text-muted mt-1">fa-brands fa-tiktok</div>
+        </div>
+      </div>
+
+      <h2 class="h5 text-uppercase text-meta font-monospace my-2">
+        Flaticon Icons
+      </h2>
+
+      <div class="d-flex flex-wrap gap-4 align-items-start">
+        <div class="text-center">
+          <i class="flaticon-mail"></i>
+          <div class="small text-muted mt-1">flaticon-mail</div>
+        </div>
+
+        <div class="text-center">
+          <i class="flaticon-headphone"></i>
+          <div class="small text-muted mt-1">flaticon-headphone</div>
+        </div>
+
+        <div class="text-center">
+          <i class="flaticon-choose"></i>
+          <div class="small text-muted mt-1">flaticon-choose</div>
+        </div>
+
+        <div class="text-center">
+          <i class="flaticon-telephone"></i>
+          <div class="small text-muted mt-1">flaticon-telephone</div>
+        </div>
+
+        <div class="text-center">
+          <i class="flaticon-winner"></i>
+          <div class="small text-muted mt-1">flaticon-winner</div>
+        </div>
+      </div>
+
+      <h2 class="h5 text-uppercase text-meta font-monospace my-2">
+        Bild Icons
+      </h2>
+
+      <div class="d-flex flex-wrap gap-4 align-items-start">
+        <div class="text-center">
+          <img
+            src="assets/img/icon/home_heart.png"
+            alt="home_heart"
+            width="48"
+            height="48"
+          />
+          <div class="small text-muted mt-1">home_heart.png</div>
+        </div>
+
+        <div class="text-center">
+          <img
+            src="assets/img/icon/home.png"
+            alt="home"
+            width="48"
+            height="48"
+          />
+          <div class="small text-muted mt-1">home.png</div>
+        </div>
+
+        <div class="text-center">
+          <img
+            src="assets/img/icon/heart_hand.png"
+            alt="heart_hand"
+            width="48"
+            height="48"
+          />
+          <div class="small text-muted mt-1">heart_hand.png</div>
+        </div>
+
+        <div class="text-center">
+          <img
+            src="assets/img/icon/filling-form.png"
+            alt="form"
+            width="48"
+            height="48"
+          />
+          <div class="small text-muted mt-1">filling-form.png</div>
+        </div>
+
+        <div class="text-center">
+          <img
+            src="assets/img/icon/delivery-truck.png"
+            alt="delivery-truck"
+            width="48"
+            height="48"
+          />
+          <div class="small text-muted mt-1">delivery-truck.png</div>
+        </div>
+
+        <div class="text-center">
+          <img
+            src="assets/img/featured-1-icon.webp"
+            alt="featured-1-icon"
+            width="48"
+            height="48"
+          />
+          <div class="small text-muted mt-1">featured-1-icon.webp</div>
+        </div>
+
+        <div class="text-center">
+          <img src="assets/img/info.png" alt="info" width="48" height="48" />
+          <div class="small text-muted mt-1">info.png</div>
+        </div>
+
+        <div class="text-center">
+          <img
+            src="assets/img/icon/refresh-arrow.webp"
+            alt="refresh"
+            width="48"
+            height="48"
+          />
+          <div class="small text-muted mt-1">refresh-arrow.webp</div>
+        </div>
+
+        <div class="text-center">
+          <img
+            src="assets/img/icon/comfort3.webp"
+            alt="comfort"
+            width="48"
+            height="48"
+          />
+          <div class="small text-muted mt-1">comfort3.webp</div>
+        </div>
+
+        <div class="text-center">
+          <img
+            src="assets/img/cropped-favicon-32x32.png"
+            alt="cropped-favicon-32x32"
+            width="48"
+            height="48"
+          />
+          <div class="small text-muted mt-1">cropped-favicon-32x32.png</div>
+        </div>
+
+        <div class="text-center">
+          <img
+            src="assets/img/cta-1-shape-1.webp"
+            alt="cta-1-shape-1"
+            width="48"
+            height="48"
+          />
+          <div class="small text-muted mt-1">cta-1-shape-1.webp</div>
+        </div>
+
+        <div class="text-center">
+          <img
+            src="assets/img/icon/transparency.webp"
+            alt="transparency"
+            width="48"
+            height="48"
+          />
+          <div class="small text-muted mt-1">transparency.webp</div>
         </div>
       </div>
 
       <hr />
+
       <!-- Card -->
       <h3 class="mt-4 text-center">Card</h3>
       <div class="col-md-4">
@@ -124,7 +501,7 @@
       <hr />
 
       <!-- Buttons -->
-      <h3 class="mt-4 text-center">Buttons</h3>
+      <h3 class="my-4 text-center">Buttons</h3>
       <button class="btn btn-primary text-gray-50 text-uppercase">
         btn-primary
       </button>
@@ -137,8 +514,9 @@
         btn-outline-primary
       </button>
 
+      <hr />
       <!-- Tables -->
-      <h2 class="mt-5">Tables</h2>
+      <h3 class="my-4 text-center">Tables</h3>
       <div class="table-responsive rounded overflow-hidden">
         <table
           class="table table-bordered table-hover table-striped text-center"
@@ -173,7 +551,7 @@
       <hr />
 
       <!-- Spacers (using Bootstrap classes) -->
-      <h3 class="mt-4">Spacers</h3>
+      <h3 class="my-4 text-center">Spacers</h3>
       <div class="bg-light mb-1">.mb-1</div>
       <div class="bg-light mb-2">.mb-2</div>
       <div class="bg-light mb-3">.mb-3</div>
@@ -183,7 +561,7 @@
       <hr />
 
       <!-- Forms (using Bootstrap classes) -->
-      <h3 class="mt-4">Forms</h3>
+      <h3 class="my-4 text-center">Forms</h3>
       <form class="p-3 w-50 border rounded-1">
         <div class="form-floating">
           <input
@@ -341,7 +719,7 @@
 
       <hr />
       <!-- Dropdown  -->
-      <h3 class="mt-4">Dropdown</h3>
+      <h3 class="mt-4 text-center">Dropdown</h3>
       <div class="dropdown" style="width: 200px">
         <button
           class="btn rounded-sm dropdown-toggle w-100 font-monospace text-uppercase"
@@ -365,7 +743,7 @@
 
       <hr />
       <!-- Pagination  -->
-      <h3 class="mt-4">Pagination</h3>
+      <h3 class="mt-4 text-center">Pagination</h3>
       <div class="mb-6">
         <h4 class="mb-3">Basic Pagination</h4>
         <nav aria-label="Page navigation example">
@@ -455,24 +833,8 @@
         </div>
       </div>
 
-      <div class="mb-4">
-        <label
-          for="tags-input"
-          class="form-label text-uppercase text-meta font-monospace small lh-lg"
-        >
-          Betreuung
-        </label>
-        <input
-          type="text"
-          id="tags-input"
-          class="form-control font-monospace text-uppercase"
-          placeholder="z. B. 24/7 Betreuung, flexibel Einsatz, Notfalleinsatz, Nachtschicht"
-          value=""
-        />
-      </div>
-
       <!-- Pagination with Previous/Next -->
-      <div class="mb-6">
+      <div class="mb-6 mt-4">
         <h4 class="mb-3">Pagination with Previous/Next</h4>
         <nav aria-label="Page navigation example">
           <ul class="pagination">
@@ -493,6 +855,51 @@
             </li>
           </ul>
         </nav>
+      </div>
+
+      <hr />
+      <!-- Tags Input -->
+      <h3 class="mt-4 text-center">Tag Elemente</h3>
+
+      <div class="mb-4">
+        <label
+          for="tags-input"
+          class="form-label text-uppercase text-meta font-monospace small lh-lg"
+        >
+          Betreuung
+        </label>
+        <div
+          id="tag-container"
+          class="form-control d-flex flex-wrap align-items-center gap-2 py-2 px-2 shadow-none"
+        >
+          <!-- Example of pre-added tags -->
+          <span class="tag text-uppercase">
+            24/7 Betreuung
+            <button
+              type="button"
+              class="btn-close ms-1"
+              aria-label="Remove"
+            ></button>
+          </span>
+
+          <span class="tag text-uppercase">
+            Notfalleinsatz
+            <button
+              type="button"
+              class="btn-close ms-1"
+              aria-label="Remove"
+            ></button>
+          </span>
+
+          <!-- Input for new tags -->
+          <input
+            type="text"
+            id="tags-input"
+            class="tag-input border-0 flex-grow-1 font-monospace text-uppercase bg-transparent"
+            placeholder="z. B. Nachtschicht"
+            autocomplete="off"
+          />
+        </div>
       </div>
 
       <hr />
@@ -550,25 +957,48 @@
           </div>
         </div>
       </div>
+
+      <hr />
+      <!-- Back to top start -->
+      <div class="back-to-top-wrapper">
+        <button
+          id="back_to_top"
+          type="button"
+          class="back-to-top-btn bg-primary text-gray-50 d-flex align-items-center justify-content-center shadow border-0"
+        >
+          <i class="bi bi-arrow-up"></i>
+        </button>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/use-bootstrap-tag@2.2.2/dist/use-bootstrap-tag.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         // Initialize tags input
         const input = document.getElementById("tags-input");
-        if (input) {
-          UseBootstrapTag(input, {
-            tagClass: "badge bg-senioangel-green me-1 mb-1",
-            confirmKeys: [13, 44], // Enter и запятая
-            separators: [",", ";", " "],
-            maxTags: 10,
-            minLength: 2,
-            allowDuplicates: false,
-            allowEmptyTags: false,
-          });
-        }
+        const container = document.getElementById("tag-container");
+
+        input.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === ",") {
+            e.preventDefault();
+            const value = input.value.trim().replace(/,$/, "");
+            if (value !== "") {
+              const tag = document.createElement("span");
+              tag.className = "tag text-uppercase";
+              tag.innerHTML = `${value} <button type="button" class="btn-close btn-sm ms-2" aria-label="Remove"></button>`;
+              container.insertBefore(tag, input);
+              input.value = "";
+            }
+          }
+        });
+
+        container.addEventListener("click", function (e) {
+          if (e.target.classList.contains("btn-close")) {
+            e.target.parentElement.remove();
+          }
+        });
 
         // Accordion functionality
         var items = document.querySelectorAll(".accordion-item");
@@ -655,8 +1085,98 @@
             }
           });
         });
+
+        // Back to top functionality
+        function back_to_top() {
+          var btn = document.getElementById("back_to_top");
+          var btn_wrapper = document.querySelector(".back-to-top-wrapper");
+
+          window.addEventListener("scroll", function () {
+            if (window.scrollY > 300) {
+              btn_wrapper.classList.add("back-to-top-btn-show");
+            } else {
+              btn_wrapper.classList.remove("back-to-top-btn-show");
+            }
+          });
+
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          });
+        }
+        back_to_top();
+      });
+
+      // Arrow animation
+      document.querySelectorAll(".link-with-arrow").forEach((link) => {
+        const arrow = link.querySelector(".fly-arrow-inside");
+        if (!arrow) return;
+
+        link.addEventListener("mouseenter", () => {
+          // fly diagonally ↗
+          gsap.to(arrow, {
+            duration: 0.2,
+            x: 24,
+            y: -24,
+            ease: "power1.in",
+            onComplete: () => {
+              // arrow fully disappeared — teleport left-down and wait
+              gsap.set(arrow, { x: -24, y: 24 });
+
+              // return with delay in center
+              gsap.to(arrow, {
+                duration: 0.4,
+                delay: 0.2, // delay before return
+                x: 0,
+                y: 0,
+                ease: "power1.out",
+              });
+            },
+          });
+        });
+
+        // arrow down
+        document
+          .querySelectorAll(".circle-down-container")
+          .forEach((container) => {
+            const arrow = container.querySelector(".fly-arrow-down");
+            if (!arrow) return;
+
+            let isAnimating = false;
+
+            container.addEventListener("mouseenter", () => {
+              if (isAnimating) return;
+              isAnimating = true;
+
+              //  fall down and disappear
+              gsap.to(arrow, {
+                duration: 0.2,
+                y: 24,
+                opacity: 0,
+                ease: "power1.in",
+                onComplete: () => {
+                  // teleport up
+                  gsap.set(arrow, { y: -24 });
+
+                  // slowly return to the bottom with appearance
+                  gsap.to(arrow, {
+                    duration: 0.4,
+                    delay: 0.2,
+                    y: 0,
+                    opacity: 1,
+                    ease: "power1.out",
+                    onComplete: () => {
+                      isAnimating = false;
+                    },
+                  });
+                },
+              });
+            });
+          });
       });
     </script>
-    <script></script>
   </body>
 </html>
