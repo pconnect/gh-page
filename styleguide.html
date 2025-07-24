@@ -25,73 +25,6 @@
     <link rel="stylesheet" href="assets/css/flaticon_aid.css" />
     <link rel="stylesheet" href="assets/css/font-awesome-pro.css" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-
-    <style>
-      /* Back to top button */
-      .back-to-top-wrapper {
-        position: fixed;
-        right: 50px;
-        bottom: 0;
-        height: 44px;
-        width: 44px;
-        z-index: 99;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease-out;
-      }
-
-      @media (max-width: 575px) {
-        .back-to-top-wrapper {
-          right: 20px;
-          bottom: 20px;
-        }
-      }
-
-      .back-to-top-wrapper.back-to-top-btn-show {
-        visibility: visible;
-        opacity: 1;
-        bottom: 50px;
-      }
-
-      .back-to-top-btn {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        transition: all 0.3s ease-out;
-      }
-
-      .back-to-top-btn:hover {
-        transform: translateY(-4px);
-      }
-
-      /* Arrow animation */
-      .circle-container {
-        position: relative;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        overflow: hidden;
-        flex-shrink: 0;
-      }
-
-      .circle-bg {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        border: 2px solid currentColor;
-      }
-
-      .fly-arrow-inside {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        font-size: 1rem;
-        color: currentColor;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        pointer-events: none;
-      }
-    </style>
   </head>
   <body>
     <div class="container mt-4">
@@ -215,39 +148,54 @@
       </div>
 
       <!-- SA-Box icons -->
-      <h2 class="mt-4">SenioAngel icons</h2>
-      <h3 class="h5 text-uppercase text-meta font-monospace my-2">
-        FontAwesome Icons
-      </h3>
+      <h3 class="mt-4 text-center">SenioAngel-Box icons</h3>
+      <h5 class="text-uppercase mt-3 mb-2">FontAwesome Icons</h5>
 
       <div class="d-flex flex-wrap gap-4 align-items-start">
         <div class="text-center">
           <i class="far fa-bars"></i>
-
           <div class="small text-muted mt-1">far fa-bars</div>
         </div>
+
         <div class="text-center">
-          <i class="fas fa-plus"></i>
+          <button
+            class="btn icon-toggle rounded-circle"
+            style="font-size: 1.2rem; top: 15px; right: 15px"
+          >
+            <i class="fas fa-plus"></i>
+          </button>
           <div class="small text-muted mt-1">fas fa-plus</div>
         </div>
 
         <div class="text-center">
-          <i class="fas fa-chevron-down"></i>
+          <button
+            class="btn btn-secondary rounded-circle icon-bg-hover border-0"
+          >
+            <i class="fas fa-chevron-down"></i>
+          </button>
           <div class="small text-muted mt-1">fas fa-chevron-down</div>
         </div>
 
         <div class="text-center">
           <i class="fa-solid fa-circle-plus"></i>
+
           <div class="small text-muted mt-1">fa-solid fa-circle-plus</div>
         </div>
 
         <div class="text-center">
-          <i class="fa fa-paper-plane"></i>
+          <button
+            class="btn btn-secondary rounded-circle icon-bg-hover border-0"
+          >
+            <i class="fa fa-paper-plane"></i>
+          </button>
           <div class="small text-muted mt-1">fa fa-paper-plane</div>
         </div>
 
         <div class="text-center">
-          <i class="fas fa-times"></i>
+          <div class="cart-item-remove amount_plus minus">
+            <i class="fas fa-times"></i>
+          </div>
+
           <div class="small text-muted mt-1">fas fa-times</div>
         </div>
 
@@ -257,17 +205,23 @@
         </div>
 
         <div class="text-center">
-          <i class="fa fa-trash"></i>
+          <button class="btn btn-outline-danger btn-sm rounded-circle">
+            <i class="fa fa-trash"></i>
+          </button>
           <div class="small text-muted mt-1">fa fa-trash</div>
         </div>
 
         <div class="text-center">
-          <i class="fas fa-award"></i>
+          <div class="text-primary icon-hover-white">
+            <i class="fas fa-award" style="font-size: 50px"></i>
+          </div>
           <div class="small text-muted mt-1">fas fa-award</div>
         </div>
 
         <div class="text-center">
-          <i class="fas fa-clipboard-check"></i>
+          <div class="text-primary icon-hover-white">
+            <i class="fas fa-clipboard-check" style="font-size: 50px"></i>
+          </div>
           <div class="small text-muted mt-1">fas fa-clipboard-check</div>
         </div>
 
@@ -277,22 +231,30 @@
         </div>
 
         <div class="text-center">
-          <i class="fas fa-truck"></i>
+          <div class="text-primary icon-hover-white">
+            <i class="fas fa-truck" style="font-size: 50px"></i>
+          </div>
           <div class="small text-muted mt-1">fas fa-truck</div>
         </div>
 
         <div class="text-center">
-          <i class="fas fa-star"></i>
+          <div class="text-primary">
+            <i class="fas fa-star"></i>
+          </div>
           <div class="small text-muted mt-1">fas fa-star</div>
         </div>
 
         <div class="text-center">
-          <i class="fas fa-sync-alt"></i>
+          <div class="text-primary icon-hover-white">
+            <i class="fas fa-sync-alt" style="font-size: 50px"></i>
+          </div>
           <div class="small text-muted mt-1">fas fa-sync-alt</div>
         </div>
 
         <div class="text-center">
-          <i class="fa-solid fa-cart-shopping"></i>
+          <div class="text-primary icon-hover-white">
+            <i class="fa-solid fa-cart-shopping" style="font-size: 50px"></i>
+          </div>
           <div class="small text-muted mt-1">fa-solid fa-cart-shopping</div>
         </div>
 
@@ -305,111 +267,175 @@
           <i class="far fa-badge-check"></i>
           <div class="small text-muted mt-1">far fa-badge-check</div>
         </div>
+      </div>
 
+      <h5 class="text-uppercase mt-3 mb-2">Social media icons</h5>
+
+      <div class="d-flex flex-wrap gap-4 align-items-start">
         <div class="text-center">
-          <i class="fa-brands fa-instagram"></i>
+          <div class="social-item">
+            <a href="#">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
           <div class="small text-muted mt-1">fa-brands fa-instagram</div>
         </div>
 
         <div class="text-center">
-          <i class="fa-brands fa-facebook"></i>
+          <div class="social-item">
+            <a href="#">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </div>
           <div class="small text-muted mt-1">fa-brands fa-facebook</div>
         </div>
 
         <div class="text-center">
-          <i class="fa-brands fa-youtube"></i>
+          <div class="social-item">
+            <a href="#">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
           <div class="small text-muted mt-1">fa-brands fa-youtube</div>
         </div>
 
         <div class="text-center">
-          <i class="fa-brands fa-tiktok"></i>
+          <div class="social-item">
+            <a href="#">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
           <div class="small text-muted mt-1">fa-brands fa-tiktok</div>
         </div>
       </div>
 
-      <h2 class="h5 text-uppercase text-meta font-monospace my-2">
-        Flaticon Icons
-      </h2>
+      <h5 class="text-uppercase my-2">Flaticon Icons</h5>
 
       <div class="d-flex flex-wrap gap-4 align-items-start">
         <div class="text-center">
-          <i class="flaticon-mail"></i>
+          <div
+            class="header-icon d-flex justify-content-center align-items-center"
+          >
+            <span class="flaticon-icon"><i class="flaticon-mail"></i></span>
+          </div>
           <div class="small text-muted mt-1">flaticon-mail</div>
         </div>
 
         <div class="text-center">
-          <i class="flaticon-headphone"></i>
+          <div
+            class="header-icon d-flex justify-content-center align-items-center"
+          >
+            <span class="flaticon-icon"
+              ><i class="flaticon-headphone"></i>
+            </span>
+          </div>
           <div class="small text-muted mt-1">flaticon-headphone</div>
         </div>
 
         <div class="text-center">
-          <i class="flaticon-choose"></i>
+          <div
+            class="about-icon d-flex justify-content-center align-items-center"
+          >
+            <span class="flaticon-icon-about"
+              ><i class="flaticon-choose"></i>
+            </span>
+          </div>
           <div class="small text-muted mt-1">flaticon-choose</div>
         </div>
 
         <div class="text-center">
-          <i class="flaticon-telephone"></i>
+          <div
+            class="about-icon d-flex justify-content-center align-items-center"
+          >
+            <span class="flaticon-icon-about"
+              ><i class="flaticon-telephone"></i>
+            </span>
+          </div>
           <div class="small text-muted mt-1">flaticon-telephone</div>
         </div>
 
         <div class="text-center">
-          <i class="flaticon-winner"></i>
+          <div
+            class="about-icon d-flex justify-content-center align-items-center"
+          >
+            <span class="flaticon-icon-about flaticon-icon--no-bg"
+              ><i class="flaticon-winner"></i>
+            </span>
+          </div>
           <div class="small text-muted mt-1">flaticon-winner</div>
         </div>
       </div>
 
-      <h2 class="h5 text-uppercase text-meta font-monospace my-2">
-        Bild Icons
-      </h2>
+      <h5 class="text-uppercase my-2">Bild Icons</h5>
 
       <div class="d-flex flex-wrap gap-4 align-items-start">
         <div class="text-center">
-          <img
-            src="assets/img/icon/home_heart.png"
-            alt="home_heart"
-            width="48"
-            height="48"
-          />
+          <div
+            class="flaticon-icon-about d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="assets/img/icon/home_heart.png"
+              alt="home_heart"
+              width="48"
+              height="48"
+            />
+          </div>
           <div class="small text-muted mt-1">home_heart.png</div>
         </div>
 
         <div class="text-center">
-          <img
-            src="assets/img/icon/home.png"
-            alt="home"
-            width="48"
-            height="48"
-          />
+          <div
+            class="flaticon-icon-about d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="assets/img/icon/home.png"
+              alt="home"
+              width="48"
+              height="48"
+            />
+          </div>
           <div class="small text-muted mt-1">home.png</div>
         </div>
 
         <div class="text-center">
-          <img
-            src="assets/img/icon/heart_hand.png"
-            alt="heart_hand"
-            width="48"
-            height="48"
-          />
+          <div
+            class="flaticon-icon-about d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="assets/img/icon/heart_hand.png"
+              alt="heart_hand"
+              width="48"
+              height="48"
+            />
+          </div>
           <div class="small text-muted mt-1">heart_hand.png</div>
         </div>
 
         <div class="text-center">
-          <img
-            src="assets/img/icon/filling-form.png"
-            alt="form"
-            width="48"
-            height="48"
-          />
+          <div
+            class="flaticon-icon-about d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="assets/img/icon/filling-form.png"
+              alt="form"
+              width="48"
+              height="48"
+            />
+          </div>
           <div class="small text-muted mt-1">filling-form.png</div>
         </div>
 
         <div class="text-center">
-          <img
-            src="assets/img/icon/delivery-truck.png"
-            alt="delivery-truck"
-            width="48"
-            height="48"
-          />
+          <div
+            class="flaticon-icon-about d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="assets/img/icon/delivery-truck.png"
+              alt="delivery-truck"
+              width="48"
+              height="48"
+            />
+          </div>
           <div class="small text-muted mt-1">delivery-truck.png</div>
         </div>
 
@@ -424,7 +450,13 @@
         </div>
 
         <div class="text-center">
-          <img src="assets/img/info.png" alt="info" width="48" height="48" />
+          <img
+            src="assets/img/info.png"
+            class="info-img"
+            alt="info"
+            width="48"
+            height="48"
+          />
           <div class="small text-muted mt-1">info.png</div>
         </div>
 
@@ -477,6 +509,76 @@
           />
           <div class="small text-muted mt-1">transparency.webp</div>
         </div>
+      </div>
+      <hr />
+
+      <!-- Icon-Generator Prompt -->
+
+      <h3 class="text-uppercase text-center my-3">
+        Icon-Generator Prompt (für GPT, DALL·E, etc.)
+      </h3>
+
+      <!-- Visual example -->
+      <div class="d-flex align-items-center gap-4 mb-4">
+        <img
+          src="assets/img/icon/heart_hand.png"
+          alt="Beispiel-Icon"
+          width="64"
+          height="64"
+        />
+        <div class="small text-muted">
+          Stilvorlage: <code>heart_hand.png</code>
+        </div>
+      </div>
+
+      <!-- German prompt -->
+      <h6 class="text-uppercase text-meta small font-monospace mt-4">
+        Deutsch (für ChatGPT / DALL·E)
+      </h6>
+      <div class="bg-light p-3 border rounded font-monospace small">
+        Erstelle ein flaches, minimalistisches Icon im SVG- oder PNG-Stil.<br />
+        Stil: klare, abgerundete Linien, ohne Füllungen, ohne Schattierungen.<br />
+        <br />
+        <strong>Primärfarbe:</strong> #6EB5B2<br />
+        <strong>Linienstärke:</strong> 2px<br />
+        <strong>Größe:</strong> 512×512 px<br />
+        <strong>Format:</strong> SVG oder PNG<br />
+        <br />
+
+        <strong>Thema:</strong> Hier das Thema eingeben, z. B. Pflege, Familie,
+        Dokument, Vertrauen<br />
+        <br />
+        ⚠️ Der Hintergrund muss vollständig transparent sein (echter
+        Alphakanal). Kein Weiß. Das Icon soll auf Webseiten über beliebigem
+        Hintergrund einsetzbar sein.<br />
+        <br />
+        Das Icon soll leicht verständlich, modern und konsistent im Stil sein.
+      </div>
+
+      <!-- English prompt -->
+      <h6 class="text-uppercase text-meta small font-monospace mt-4">
+        English (for ChatGPT / DALL·E)
+      </h6>
+      <div class="bg-light p-3 border rounded font-monospace small">
+        Create a flat, minimalist icon in SVG or PNG format.<br />
+        Style: clean, rounded lines, no gradients, no shading, no solid fills.
+        Outline only.<br />
+        <br />
+        <strong>Primary color:</strong> #6EB5B2<br />
+        <strong>Line thickness:</strong> 2px<br />
+        <strong>Size:</strong> 512×512 px<br />
+        <strong>Format:</strong> SVG or high-resolution PNG<br />
+        <br />
+        <strong>Topic:</strong> Enter the desired topic here, e.g. care, family,
+        document, trust<br />
+        <br />
+
+        ⚠️ The icon must have a completely transparent background (true alpha
+        channel).<br />
+        No white background, no visible box or shape behind the icon.<br />
+        <br />
+        The icon should be simple, readable, and web-friendly, designed for use
+        on various background colors and UI contexts.
       </div>
 
       <hr />
@@ -957,7 +1059,38 @@
           </div>
         </div>
       </div>
+      <hr />
 
+      <h3 class="text-center mt-2 mb-3">Animiertes Lade-Element</h3>
+
+      <div
+        class="preloader-logo mx-auto"
+        role="status"
+        aria-label="Ladevorgang"
+      >
+        <div class="preloader-circle">
+          <svg width="120" height="120" viewBox="0 0 380 380" fill="none">
+            <circle
+              stroke="#D9D9D9"
+              cx="190"
+              cy="190"
+              r="180"
+              stroke-width="6"
+              stroke-linecap="round"
+            ></circle>
+            <circle
+              class="preloader-active-circle"
+              stroke="#6EB5B2"
+              cx="190"
+              cy="190"
+              r="180"
+              stroke-width="6"
+              stroke-linecap="round"
+            ></circle>
+          </svg>
+        </div>
+        <img src="assets/img/logo/favicon.png" alt="Logo" class="w-25" />
+      </div>
       <hr />
       <!-- Back to top start -->
       <div class="back-to-top-wrapper">
