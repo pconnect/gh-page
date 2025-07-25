@@ -13,7 +13,6 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="assets/css/bootstrap.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
@@ -25,6 +24,8 @@
     <link rel="stylesheet" href="assets/css/flaticon_aid.css" />
     <link rel="stylesheet" href="assets/css/font-awesome-pro.css" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/virtual-select.min.css" />
   </head>
   <body>
     <div class="container mt-4">
@@ -818,6 +819,43 @@
           </button>
         </div>
       </form>
+      <hr />
+      <!-- Virtual Select -->
+      <h3 class="my-3 text-center">Virtual Select</h3>
+      <h5 class="my-3">
+        Virtual Select with <mark>dynamic options</mark> with
+        <mark>allow to add new option in the search box</mark> and
+        <mark>custom width for dropbox</mark>
+      </h5>
+      <div class="vs-example mb-4">
+        <label for="example-select" class="form-label">Beispiel-Auswahl</label>
+        <div id="example-select"></div>
+      </div>
+
+      <h5 class="my-3">
+        Virtual Select with <mark>static options</mark> with
+        <mark>multiple select</mark> and
+        <mark>show selected options at the top of the dropbox on reopen</mark>
+      </h5>
+      <div class="vs-example mb-4">
+        <label for="example2-select" class="form-label">Beispiel-Auswahl</label>
+        <select id="example2-select" multiple>
+          <option value="pflege">Pflege</option>
+          <option value="familie">Familie</option>
+          <option value="dokumente">Dokumente</option>
+          <option value="vertrauen">Vertrauen</option>
+        </select>
+      </div>
+
+      <h5 class="my-3">
+        Virtual Select with <mark>dynamic options</mark> with
+        <mark>option groups</mark> and <mark>multiple select</mark> and
+        <mark>label with description</mark>
+      </h5>
+      <div class="vs-example mb-4">
+        <label for="example3-select" class="form-label">Beispiel-Auswahl</label>
+        <div id="example3-select"></div>
+      </div>
 
       <hr />
       <!-- Dropdown  -->
@@ -1103,12 +1141,147 @@
         </button>
       </div>
     </div>
+    <script src="assets/js/virtual-select.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/use-bootstrap-tag@2.2.2/dist/use-bootstrap-tag.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        // Virtual Select 1: Dynamische Optionen, neue Option erlauben, eigene Breite, Tooltip für ausgewählte Optionen
+        try {
+          VirtualSelect.init({
+            ele: "#example-select",
+            placeholder: "Bitte auswählen",
+            allowNewOption: true,
+            search: true,
+            dropboxWidth: "140px",
+            optionsSelectedTextTooltip: true,
+            options: [
+              { label: "Pflege", value: "pflege" },
+              { label: "Familie", value: "familie" },
+              { label: "Dokumente", value: "dokumente" },
+              { label: "Vertrauen", value: "vertrauen" },
+              {
+                label: "To add new option, enter new value in the search box",
+                value: "longtext",
+              },
+            ],
+          });
+
+          // Add tooltip for long options
+          setTimeout(() => {
+            const options = document.querySelectorAll(
+              "#example-select .vscomp-option"
+            );
+            options.forEach((option) => {
+              const text = option.querySelector(".vscomp-option-text");
+              if (text && text.textContent.length > 20) {
+                option.setAttribute("title", text.textContent);
+              }
+            });
+          }, 100);
+
+          console.log("Virtual Select 1 initialized successfully");
+        } catch (error) {
+          console.error("Error initializing Virtual Select 1:", error);
+        }
+
+        // Virtual Select  Statische Optionen, multiple select, ausgewählte Optionen oben anzeigen
+        console.log("Virtual Select script loaded");
+        VirtualSelect.init({
+          ele: "#example2-select",
+          showSelectedOptionsFirst: true,
+          placeholder: "Bitte auswählen",
+          search: true,
+        });
+        console.log("Virtual Select initialized");
+
+        // Virtual Select 3: Dynamische Optionen, Optionen gruppiert, multiple select, Tooltip für ausgewählte Optionen
+        try {
+          VirtualSelect.init({
+            ele: "#example3-select",
+            multiple: true,
+
+            placeholder: "Bitte auswählen",
+            search: true,
+            options: [
+              {
+                label: "Englisch",
+                value: "englisch",
+                options: [
+                  {
+                    label: "En A1",
+                    value: "A1",
+                    description: "Anfänger",
+                  },
+                  {
+                    label: "En A2",
+                    value: "A2",
+                    description: "Grundlegende Kenntnisse",
+                  },
+                  {
+                    label: "En B1",
+                    value: "B1",
+                    description: "Fortgeschrittene Sprachverwendung",
+                  },
+                  {
+                    label: "En B2",
+                    value: "B2",
+                    description: "Selbständige Sprachverwendung",
+                  },
+                  {
+                    label: "En C1",
+                    value: "C1",
+                    description: "Fachkundige Sprachkenntnisse",
+                  },
+                  {
+                    label: "En C2",
+                    value: "C2",
+                    description: "Annähernd muttersprachliche Kenntnisse",
+                  },
+                ],
+              },
+              {
+                label: "Deutsch",
+                value: "deutsch",
+                options: [
+                  { label: "De A1", value: "A1" },
+                  { label: "De A2", value: "A2" },
+                  { label: "De B1", value: "B1" },
+                  { label: "De B2", value: "B2" },
+                  { label: "De C1", value: "C1" },
+                  { label: "De C2", value: "C2" },
+                ],
+              },
+              { label: "Französisch", value: "französisch" },
+              { label: "Spanisch", value: "spanisch" },
+            ],
+          });
+
+          // Add tooltip for options with descriptions
+          setTimeout(() => {
+            const options = document.querySelectorAll(
+              "#example3-select .vscomp-option"
+            );
+            options.forEach((option) => {
+              const text = option.querySelector(".vscomp-option-text");
+              const description = option.querySelector(
+                ".vscomp-option-description"
+              );
+              if (text && description) {
+                const fullText =
+                  text.textContent + " - " + description.textContent;
+                option.setAttribute("title", fullText);
+              }
+            });
+          }, 100);
+
+          console.log("Virtual Select 3 initialized successfully");
+        } catch (error) {
+          console.error("Error initializing Virtual Select 3:", error);
+        }
+
         // Initialize tags input
         const input = document.getElementById("tags-input");
         const container = document.getElementById("tag-container");
