@@ -1155,8 +1155,16 @@
             placeholder: "Bitte auswählen",
             allowNewOption: true,
             search: true,
-            dropboxWidth: "140px",
+            dropboxWidth: "160px",
             optionsSelectedTextTooltip: true,
+            tooltipOptions: {
+              placement: "top",
+              theme: "dark",
+              maxWidth: 200,
+              enterDelay: 0,
+              leaveDelay: 0,
+            },
+            showTooltip: true,
             options: [
               { label: "Pflege", value: "pflege" },
               { label: "Familie", value: "familie" },
@@ -1169,33 +1177,36 @@
             ],
           });
 
-          // Add tooltip for long options
-          setTimeout(() => {
-            const options = document.querySelectorAll(
-              "#example-select .vscomp-option"
-            );
+          // add tooltip's for long text
+          function addTooltips() {
+            const options = document.querySelectorAll(".vscomp-option-text");
             options.forEach((option) => {
-              const text = option.querySelector(".vscomp-option-text");
-              if (text && text.textContent.length > 20) {
-                option.setAttribute("title", text.textContent);
+              const text = option.textContent;
+              if (text && text.trim().length > 20) {
+                option.title = text;
               }
             });
-          }, 100);
+          }
 
-          console.log("Virtual Select 1 initialized successfully");
+          new MutationObserver(() => {
+            if (document.querySelector(".vscomp-option-text")) {
+              setTimeout(addTooltips, 100);
+            }
+          }).observe(document.body, { childList: true, subtree: true });
+
+          setTimeout(addTooltips, 200);
         } catch (error) {
           console.error("Error initializing Virtual Select 1:", error);
         }
 
         // Virtual Select  Statische Optionen, multiple select, ausgewählte Optionen oben anzeigen
-        console.log("Virtual Select script loaded");
+
         VirtualSelect.init({
           ele: "#example2-select",
           showSelectedOptionsFirst: true,
           placeholder: "Bitte auswählen",
           search: true,
         });
-        console.log("Virtual Select initialized");
 
         // Virtual Select 3: Dynamische Optionen, Optionen gruppiert, multiple select, Tooltip für ausgewählte Optionen
         try {
@@ -1205,10 +1216,12 @@
 
             placeholder: "Bitte auswählen",
             search: true,
+            hasOptionDescription: true,
             options: [
               {
                 label: "Englisch",
                 value: "englisch",
+
                 options: [
                   {
                     label: "En A1",
@@ -1246,38 +1259,171 @@
                 label: "Deutsch",
                 value: "deutsch",
                 options: [
-                  { label: "De A1", value: "A1" },
-                  { label: "De A2", value: "A2" },
-                  { label: "De B1", value: "B1" },
-                  { label: "De B2", value: "B2" },
-                  { label: "De C1", value: "C1" },
-                  { label: "De C2", value: "C2" },
+                  { label: "De A1", value: "A1", description: "Anfänger" },
+                  {
+                    label: "De A2",
+                    value: "A2",
+                    description: "Grundlegende Kenntnisse",
+                  },
+                  {
+                    label: "De B1",
+                    value: "B1",
+                    description: "Fortgeschrittene Sprachverwendung",
+                  },
+                  {
+                    label: "De B2",
+                    value: "B2",
+                    description: "Selbständige Sprachverwendung",
+                  },
+                  {
+                    label: "De C1",
+                    value: "C1",
+                    description: "Fachkundige Sprachkenntnisse",
+                  },
+                  {
+                    label: "De C2",
+                    value: "C2",
+                    description: "Annähernd muttersprachliche Kenntnisse",
+                  },
                 ],
               },
-              { label: "Französisch", value: "französisch" },
-              { label: "Spanisch", value: "spanisch" },
+              {
+                label: "Französisch",
+                value: "französisch",
+
+                options: [
+                  { label: "Fr A1", value: "A1", description: "Anfänger" },
+                  {
+                    label: "Fr A2",
+                    value: "A2",
+                    description: "Grundlegende Kenntnisse",
+                  },
+                  {
+                    label: "Fr B1",
+                    value: "B1",
+                    description: "Fortgeschrittene Sprachverwendung",
+                  },
+                  {
+                    label: "Fr B2",
+                    value: "B2",
+                    description: "Selbständige Sprachverwendung",
+                  },
+                  {
+                    label: "Fr C1",
+                    value: "C1",
+                    description: "Fachkundige Sprachkenntnisse",
+                  },
+                  {
+                    label: "Fr C2",
+                    value: "C2",
+                    description: "Annähernd muttersprachliche Kenntnisse",
+                  },
+                ],
+              },
+              {
+                label: "Spanisch",
+                value: "spanisch",
+
+                options: [
+                  { label: "Sp A1", value: "A1", description: "Anfänger" },
+                  {
+                    label: "Sp A2",
+                    value: "A2",
+                    description: "Grundlegende Kenntnisse",
+                  },
+                  {
+                    label: "Sp B1",
+                    value: "B1",
+                    description: "Fortgeschrittene Sprachverwendung",
+                  },
+                  {
+                    label: "Sp B2",
+                    value: "B2",
+                    description: "Selbständige Sprachverwendung",
+                  },
+                  {
+                    label: "Sp C1",
+                    value: "C1",
+                    description: "Fachkundige Sprachkenntnisse",
+                  },
+                  {
+                    label: "Sp C2",
+                    value: "C2",
+                    description: "Annähernd muttersprachliche Kenntnisse",
+                  },
+                ],
+              },
             ],
           });
 
-          // Add tooltip for options with descriptions
-          setTimeout(() => {
-            const options = document.querySelectorAll(
-              "#example3-select .vscomp-option"
-            );
-            options.forEach((option) => {
-              const text = option.querySelector(".vscomp-option-text");
-              const description = option.querySelector(
-                ".vscomp-option-description"
-              );
-              if (text && description) {
-                const fullText =
-                  text.textContent + " - " + description.textContent;
-                option.setAttribute("title", fullText);
-              }
-            });
-          }, 100);
+          // setup marquee animation
+          function setupMarquee() {
+            document
+              .querySelectorAll(".vscomp-option-description")
+              .forEach((desc) => {
+                const text = desc.textContent.trim();
+                if (
+                  text.length > 20 &&
+                  !desc.hasAttribute("data-marquee-setup")
+                ) {
+                  desc.setAttribute("data-original-text", text);
+                  desc.setAttribute("data-marquee-setup", "true");
 
-          console.log("Virtual Select 3 initialized successfully");
+                  const option = desc.closest(".vscomp-option");
+                  if (!option) return;
+
+                  const startMarquee = () => {
+                    if (!desc.classList.contains("marquee-hover")) {
+                      const span = document.createElement("span");
+                      span.classList.add("marquee-content");
+                      span.textContent = text;
+                      span.style.animationDuration = `${Math.max(
+                        3,
+                        text.length * 0.1
+                      )}s`;
+                      desc.innerHTML = "";
+                      desc.appendChild(span);
+                      desc.classList.add("marquee-hover");
+                    }
+                  };
+
+                  const stopMarquee = () => {
+                    if (desc.classList.contains("marquee-hover")) {
+                      desc.classList.remove("marquee-hover");
+                      desc.innerHTML = desc.getAttribute("data-original-text");
+                    }
+                  };
+
+                  // Desktop events
+                  option.addEventListener("mouseenter", startMarquee);
+                  option.addEventListener("mouseleave", stopMarquee);
+
+                  // Mobile events
+                  let touchTimer, longPressTimer;
+                  option.addEventListener("touchstart", () => {
+                    longPressTimer = setTimeout(() => {
+                      startMarquee();
+                      touchTimer = setTimeout(stopMarquee, 5000);
+                    }, 1000);
+                  });
+
+                  option.addEventListener("touchend", () => {
+                    clearTimeout(longPressTimer);
+                    clearTimeout(touchTimer);
+                    stopMarquee();
+                  });
+                }
+              });
+          }
+
+          // Setup marquee animation
+          new MutationObserver(() => {
+            if (document.querySelector(".vscomp-option-description")) {
+              setupMarquee();
+            }
+          }).observe(document.body, { childList: true, subtree: true });
+
+          setTimeout(setupMarquee, 100);
         } catch (error) {
           console.error("Error initializing Virtual Select 3:", error);
         }
