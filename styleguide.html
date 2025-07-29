@@ -857,6 +857,38 @@
         <div id="example3-select"></div>
       </div>
 
+      <h5 class="my-3">
+        Virtual Select with <mark>dynamic options</mark> with
+        <mark>show selected options as tags</mark>
+      </h5>
+      <div class="vs-example mb-4">
+        <label for="example4-select" class="form-label">Beispiel-Auswahl</label>
+        <div id="example4-select"></div>
+      </div>
+
+      <h5 class="my-3">
+        Virtual Select with <mark>dynamic options</mark> with
+        <mark>validation</mark>
+      </h5>
+      <form id="sample-form" class="d-flex flex-column gap-2 w-25">
+        <label for="sample-select">Select a country</label>
+        <div id="sample-select" style="max-width: 350px" ;></div>
+
+        <button
+          type="button"
+          id="reset-button"
+          class="btn btn-secondary text-uppercase text-meta lh-lg small"
+        >
+          Reset
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary text-gray-50 text-uppercase text-meta lh-lg small"
+        >
+          Submit
+        </button>
+      </form>
+
       <hr />
       <!-- Dropdown  -->
       <h3 class="mt-4 text-center">Dropdown</h3>
@@ -1148,7 +1180,7 @@
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Virtual Select 1: Dynamische Optionen, neue Option erlauben, eigene Breite, Tooltip für ausgewählte Optionen
+        // Virtual Select 1: Dynamic options, allow adding new option, custom width, tooltip for selected options
         try {
           VirtualSelect.init({
             ele: "#example-select",
@@ -1199,7 +1231,7 @@
           console.error("Error initializing Virtual Select 1:", error);
         }
 
-        // Virtual Select  Statische Optionen, multiple select, ausgewählte Optionen oben anzeigen
+        // Virtual Select 2: Static options, multiple select, show selected options first
 
         VirtualSelect.init({
           ele: "#example2-select",
@@ -1208,7 +1240,7 @@
           search: true,
         });
 
-        // Virtual Select 3: Dynamische Optionen, Optionen gruppiert, multiple select, Tooltip für ausgewählte Optionen
+        // Virtual Select 3: Dynamic options, grouped options, multiple select, Tooltip for selected options
         try {
           VirtualSelect.init({
             ele: "#example3-select",
@@ -1427,6 +1459,83 @@
         } catch (error) {
           console.error("Error initializing Virtual Select 3:", error);
         }
+
+        // Virtual Select 4: Multiple select, show selected options as tags
+        VirtualSelect.init({
+          ele: "#example4-select",
+          placeholder: "Bitte auswählen",
+          search: true,
+          multiple: true,
+          showValueAsTags: true,
+          options: [
+            { label: "Pflege", value: "pflege" },
+            { label: "Familie", value: "familie" },
+            { label: "Dokumente", value: "dokumente" },
+            { label: "Vertrauen", value: "vertrauen" },
+            {
+              label:
+                "This is a very long text that will be truncated in the dropdown",
+              value: "longtext",
+            },
+            {
+              label: "This is a very long text to be shown as a tag",
+              value: "longtext2",
+            },
+          ],
+        });
+
+        // Virtual Select 5: Validation
+        VirtualSelect.init({
+          ele: "#sample-select",
+          name: "country",
+          placeholder: "Select a country",
+          required: true,
+          multiple: true,
+          search: true,
+          options: [
+            { label: "Germany", value: "de" },
+            { label: "France", value: "fr" },
+            { label: "Italy", value: "it" },
+            { label: "Spain", value: "es" },
+          ],
+        });
+
+        // Validation
+        document.querySelector("#sample-select").virtualSelect.validate();
+
+        document
+          .querySelector("#sample-form")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const selectWrapper = document.querySelector(
+              "#sample-select .vscomp-wrapper"
+            );
+            const selected = document
+              .querySelector("#sample-select")
+              .virtualSelect.getValue();
+
+            if (!selected || selected.length === 0) {
+              selectWrapper.classList.add("vscomp-danger");
+              alert("Validation failed. Please select a country.");
+            } else {
+              selectWrapper.classList.remove("vscomp-danger");
+              alert("Form submitted!");
+            }
+          });
+
+        // Reset selection
+        document
+          .querySelector("#reset-button")
+          .addEventListener("click", function () {
+            const select = document.querySelector("#sample-select");
+            const wrapper = select.querySelector(".vscomp-wrapper");
+            if (select && select.virtualSelect) {
+              select.virtualSelect.setValue([]);
+              select.virtualSelect.reset();
+              wrapper.classList.remove("vscomp-danger");
+            }
+          });
 
         // Initialize tags input
         const input = document.getElementById("tags-input");
