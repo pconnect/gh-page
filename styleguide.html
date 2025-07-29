@@ -4,31 +4,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Styleguide</title>
+    <meta
+      name="description"
+      content="Styleguide for SenioAngel project - typography, colors, components and design system"
+    />
+    <meta name="author" content="SenioAngel" />
+    <meta name="theme-color" content="#6EB5B2" />
+    <title>Styleguide - SenioAngel Design System</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload critical fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:wght@100..700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="assets/fonts/noto_sans-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/manrope-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/use-bootstrap-tag@2.2.2/dist/use-bootstrap-tag.min.css"
-      rel="stylesheet"
-    />
+    <!-- fonts -->
+    <link rel="stylesheet" href="assets/fonts/fonts.css" />
+
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="assets/bootstrap-icons/bootstrap-icons.css" />
+
+    <!-- use-bootstrap-tag -->
+    <link rel="stylesheet" href="assets/css/use-bootstrap-tag.min.css" />
+
+    <!-- icons -->
     <link rel="stylesheet" href="assets/css/flaticon_aid.css" />
     <link rel="stylesheet" href="assets/css/font-awesome-pro.css" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+
+    <!-- bootstrap + custom -->
     <link rel="stylesheet" href="assets/css/bootstrap.css" />
+
+    <!-- virtual-select -->
     <link rel="stylesheet" href="assets/css/virtual-select.min.css" />
   </head>
   <body>
-    <div class="container mt-4">
+    <!-- Skip to main content for screen readers -->
+    <a href="#main-content" class="visually-hidden-focusable"
+      >Skip to main content</a
+    >
+
+    <div class="container mt-4" id="main-content">
       <h1 class="text-center">Styleguide</h1>
       <hr />
       <h2 class="mt-2 text-center">Typography</h2>
@@ -68,21 +94,53 @@
       <p class="text-uppercase text-meta-link font-monospace">
         text-meta-link 13px
       </p>
-      <p class="text-uppercase text-muted font-monospace">text-muted 14px</p>
+      <p class="text-uppercase text-meta lh-lg small text-muted font-monospace">
+        text-muted 14px
+      </p>
       <hr />
 
       <h3 class="mt-4 text-center">Colors</h3>
-      <div class="p-3 mb-2 bg-light">bg-light</div>
-      <div class="p-3 mb-2 bg-primary text-gray-50">
+      <div
+        class="p-3 mb-2 bg-light"
+        role="region"
+        aria-label="Light background color example"
+      >
+        bg-light
+      </div>
+      <div
+        class="p-3 mb-2 bg-primary text-gray-50"
+        role="region"
+        aria-label="Primary background color example"
+      >
         bg-primary + text-gray-50(text on colored buttons, on colored
         backgrounds )
       </div>
-      <div class="p-3 mb-2 bg-secondary text-gray-50">
+      <div
+        class="p-3 mb-2 bg-secondary text-gray-50"
+        role="region"
+        aria-label="Secondary background color example"
+      >
         bg-secondary + text-gray-50
       </div>
-      <div class="p-3 mb-2 bg-info text-gray-50">bg-info + text-gray-50</div>
-      <div class="p-3 mb-2 bg-dark text-gray-50">bg-dark + text-gray-50</div>
-      <div class="p-3 mb-2 bg-body-secondary">
+      <div
+        class="p-3 mb-2 bg-info text-gray-50"
+        role="region"
+        aria-label="Info background color example"
+      >
+        bg-info + text-gray-50
+      </div>
+      <div
+        class="p-3 mb-2 bg-dark text-gray-50"
+        role="region"
+        aria-label="Dark background color example"
+      >
+        bg-dark + text-gray-50
+      </div>
+      <div
+        class="p-3 mb-2 bg-body-secondary"
+        role="region"
+        aria-label="Body secondary background color example"
+      >
         bg-body-secondary for nav-bg and icon bg
       </div>
 
@@ -95,9 +153,13 @@
         <a
           href="#"
           class="link-with-arrow d-flex align-items-center text-decoration-none text-meta lh-lg small text-uppercase font-monospace"
+          aria-label="Read more about this section"
           ><div class="circle-container me-2">
             <div class="circle-bg"></div>
-            <i class="bi bi-arrow-up-right fly-arrow-inside"></i>
+            <i
+              class="bi bi-arrow-up-right fly-arrow-inside"
+              aria-hidden="true"
+            ></i>
           </div>
           Read More</a
         >
@@ -683,7 +745,7 @@
         <div class="form-floating mt-3">
           <input
             type="text"
-            class="form-control border rounded-1 font-monospace text-uppercase text-meta lh-lg small"
+            class="form-control border-0 rounded-1 font-monospace text-uppercase text-meta lh-lg small"
             id="floatingInput"
             placeholder="username"
           />
@@ -696,7 +758,7 @@
 
         <div class="form-floating mt-3">
           <textarea
-            class="form-control border rounded-1 font-monospace text-uppercase text-meta lh-lg small"
+            class="form-control border-0 rounded-1 font-monospace text-uppercase text-meta lh-lg small"
             placeholder="Leave a comment here"
             id="floatingTextarea2"
             style="height: 100px"
@@ -814,7 +876,10 @@
           </div>
         </div>
         <div class="d-flex justify-content-end">
-          <button type="submit" class="btn btn-primary text-gray-50">
+          <button
+            type="submit"
+            class="btn btn-primary text-gray-50 text-meta lh-lg small text-uppercase font-monospace"
+          >
             Submit
           </button>
         </div>
@@ -878,12 +943,14 @@
           type="button"
           id="reset-button"
           class="btn btn-secondary text-uppercase text-meta lh-lg small"
+          aria-describedby="sample-select"
         >
           Reset
         </button>
         <button
           type="submit"
           class="btn btn-primary text-gray-50 text-uppercase text-meta lh-lg small"
+          aria-describedby="sample-form"
         >
           Submit
         </button>
@@ -900,7 +967,7 @@
         >
           Services
         </button>
-        <ul class="dropdown-menu w-100">
+        <ul class="dropdown-menu w-100 font-monospace text-uppercase">
           <li>
             <a class="dropdown-item fw-light" href="#">Freunde suchen</a>
           </li>
@@ -1173,11 +1240,15 @@
         </button>
       </div>
     </div>
-    <script src="assets/js/virtual-select.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/use-bootstrap-tag@2.2.2/dist/use-bootstrap-tag.min.js"></script>
+    <!-- gsap -->
+    <script src="assets/js/gsap.min.js" defer></script>
+    <!-- virtual select -->
+    <script src="assets/js/virtual-select.min.js" defer></script>
+    <!-- use-bootstrap-tag -->
+    <script src="assets/js/use-bootstrap-tag.min.js" defer></script>
+    <!-- bootstrap -->
+    <script src="assets/js/bootstrap.bundle.min.js" defer></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         // Virtual Select 1: Dynamic options, allow adding new option, custom width, tooltip for selected options
@@ -1669,74 +1740,80 @@
           });
         }
         back_to_top();
-      });
 
-      // Arrow animation
-      document.querySelectorAll(".link-with-arrow").forEach((link) => {
-        const arrow = link.querySelector(".fly-arrow-inside");
-        if (!arrow) return;
+        // Arrow animation - optimized with reduced motion support
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
 
-        link.addEventListener("mouseenter", () => {
-          // fly diagonally ↗
-          gsap.to(arrow, {
-            duration: 0.2,
-            x: 24,
-            y: -24,
-            ease: "power1.in",
-            onComplete: () => {
-              // arrow fully disappeared — teleport left-down and wait
-              gsap.set(arrow, { x: -24, y: 24 });
-
-              // return with delay in center
-              gsap.to(arrow, {
-                duration: 0.4,
-                delay: 0.2, // delay before return
-                x: 0,
-                y: 0,
-                ease: "power1.out",
-              });
-            },
-          });
-        });
-
-        // arrow down
-        document
-          .querySelectorAll(".circle-down-container")
-          .forEach((container) => {
-            const arrow = container.querySelector(".fly-arrow-down");
+        if (!prefersReducedMotion) {
+          document.querySelectorAll(".link-with-arrow").forEach((link) => {
+            const arrow = link.querySelector(".fly-arrow-inside");
             if (!arrow) return;
 
-            let isAnimating = false;
-
-            container.addEventListener("mouseenter", () => {
-              if (isAnimating) return;
-              isAnimating = true;
-
-              //  fall down and disappear
+            link.addEventListener("mouseenter", () => {
+              // fly diagonally ↗
               gsap.to(arrow, {
                 duration: 0.2,
-                y: 24,
-                opacity: 0,
+                x: 24,
+                y: -24,
                 ease: "power1.in",
                 onComplete: () => {
-                  // teleport up
-                  gsap.set(arrow, { y: -24 });
+                  // arrow fully disappeared — teleport left-down and wait
+                  gsap.set(arrow, { x: -24, y: 24 });
 
-                  // slowly return to the bottom with appearance
+                  // return with delay in center
                   gsap.to(arrow, {
                     duration: 0.4,
-                    delay: 0.2,
+                    delay: 0.2, // delay before return
+                    x: 0,
                     y: 0,
-                    opacity: 1,
                     ease: "power1.out",
-                    onComplete: () => {
-                      isAnimating = false;
-                    },
                   });
                 },
               });
             });
           });
+
+          // arrow down
+          document
+            .querySelectorAll(".circle-down-container")
+            .forEach((container) => {
+              const arrow = container.querySelector(".fly-arrow-down");
+              if (!arrow) return;
+
+              let isAnimating = false;
+
+              container.addEventListener("mouseenter", () => {
+                if (isAnimating) return;
+                isAnimating = true;
+
+                //  fall down and disappear
+                gsap.to(arrow, {
+                  duration: 0.2,
+                  y: 24,
+                  opacity: 0,
+                  ease: "power1.in",
+                  onComplete: () => {
+                    // teleport up
+                    gsap.set(arrow, { y: -24 });
+
+                    // slowly return to the bottom with appearance
+                    gsap.to(arrow, {
+                      duration: 0.4,
+                      delay: 0.2,
+                      y: 0,
+                      opacity: 1,
+                      ease: "power1.out",
+                      onComplete: () => {
+                        isAnimating = false;
+                      },
+                    });
+                  },
+                });
+              });
+            });
+        }
       });
     </script>
   </body>
