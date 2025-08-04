@@ -485,6 +485,11 @@ $text-meta-link-font-size: 0.8125rem; //13px
           background-color: $senioangel-green !important;
           color: $gray-50 !important;
         }
+
+        &.active {
+          background-color: $senioangel-green !important;
+          color: $gray-50 !important;
+        }
       }
     }
     .btn-link {
@@ -507,6 +512,12 @@ $text-meta-link-font-size: 0.8125rem; //13px
       }
     }
   }
+}
+// Navigation buttons active state
+.btn.bg-body-secondary.active {
+  background-color: $senioangel-green !important;
+  color: $gray-50 !important;
+  border: none !important;
 }
 
 // Tag component
