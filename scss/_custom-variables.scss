@@ -449,6 +449,29 @@ $text-meta-link-font-size: 0.8125rem; //13px
   }
 }
 
+// Navigation styles for consistent hover and focus states
+.navbar {
+  .btn {
+    &.bg-body-secondary {
+      background-color: $body-secondary-bg;
+
+      &:hover,
+      &:focus {
+        background-color: $senioangel-green !important;
+        color: $gray-50 !important;
+      }
+    }
+  }
+
+  .dropdown-toggle {
+    &:hover,
+    &:focus {
+      background-color: $senioangel-green !important;
+      color: $gray-50 !important;
+    }
+  }
+}
+
 // Offcanvas menu
 .offcanvas {
   .offcanvas-body {
