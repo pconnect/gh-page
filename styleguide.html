@@ -39,7 +39,7 @@
 
     <!-- icons -->
     <link rel="stylesheet" href="assets/css/flaticon_aid.css" />
-    <link rel="stylesheet" href="assets/css/font-awesome-pro.css" />
+    <!-- <link rel="stylesheet" href="assets/css/font-awesome-pro.css" /> -->
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 
     <!-- bootstrap + custom -->
@@ -216,8 +216,8 @@
 
       <div class="d-flex flex-wrap gap-4 align-items-start">
         <div class="text-center">
-          <i class="far fa-bars"></i>
-          <div class="small text-muted mt-1">far fa-bars</div>
+          <i class="fa fa-bars"></i>
+          <div class="small text-muted mt-1">fa fa-bars</div>
         </div>
 
         <div class="text-center">
@@ -263,8 +263,8 @@
         </div>
 
         <div class="text-center">
-          <i class="fa-regular fa-angle-up"></i>
-          <div class="small text-muted mt-1">fa-regular fa-angle-up</div>
+          <i class="fa-solid fa-angle-up"></i>
+          <div class="small text-muted mt-1">fa-solid fa-angle-up</div>
         </div>
 
         <div class="text-center">
@@ -322,13 +322,15 @@
         </div>
 
         <div class="text-center">
-          <i class="far fa-play text-black"></i>
-          <div class="small text-muted mt-1">far fa-play</div>
+          <i class="fa fa-play text-black"></i>
+          <div class="small text-muted mt-1">fa fa-play</div>
         </div>
 
         <div class="text-center">
-          <i class="far fa-badge-check"></i>
-          <div class="small text-muted mt-1">far fa-badge-check</div>
+          <!--<i class="fa-solid fa-badge-check"></i>
+          <div class="small text-muted mt-1">fa-solid fa-badge-check</div>-->
+          <i class="fa-solid fa-circle-check"></i>
+          <div class="small text-muted mt-1">fa-solid fa-circle-check</div>
         </div>
       </div>
 
@@ -574,6 +576,142 @@
         </div>
       </div>
       <hr />
+      <!-- Navigation -->
+      <nav
+        class="container-fluid navbar px-2 pt-2 pb-0 text-uppercase align-items-center justify-content-between"
+      >
+        <a href="#" class="navbar-brand" aria-label="Go to homepage">
+          <img src="../images/logo.png" alt="Logo" width="240" height="60" />
+        </a>
+
+        <!-- Burger-button (not on desktop) -->
+        <button
+          class="btn btn-offcanvas-toggle d-lg-none py-1 px-2"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mobileMenu"
+          aria-label="Open mobile menu"
+        >
+          <i class="bi bi-list fs-3 text-gray-50"></i>
+        </button>
+
+        <!-- Desktop menu -->
+        <div class="d-none d-lg-flex gap-2 font-monospace align-items-center">
+          <!-- Dropdown "Services" -->
+          <div class="dropdown" style="width: 200px">
+            <button
+              class="btn dropdown-toggle w-100 font-monospace text-uppercase"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-label="Services dropdown menu"
+              aria-expanded="false"
+            >
+              Services
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Freunde suchen</a></li>
+              <li><a class="dropdown-item" href="#">Leihoma suchen</a></li>
+              <li><a class="dropdown-item" href="#">Tiere betreuen</a></li>
+            </ul>
+          </div>
+          <!-- Other links -->
+          <a
+            href="#"
+            class="btn bg-body-secondary"
+            aria-label="Go to About page"
+            >About</a
+          >
+          <a
+            href="#"
+            class="btn bg-body-secondary"
+            aria-label="Go to Contact page"
+            >Contact</a
+          >
+          <a
+            href="#"
+            class="btn bg-body-secondary"
+            aria-label="Go to Login page"
+            >Login</a
+          >
+          <a
+            href="#"
+            class="btn bg-body-secondary"
+            aria-label="Go to Register page"
+            >Register</a
+          >
+        </div>
+      </nav>
+
+      <!-- Offcanvas mobile menu -->
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title text-uppercase font-monospace">Menü</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div
+          class="offcanvas-body font-monospace d-flex flex-column gap-2 text-uppercase"
+        >
+          <!-- Slide-down "Services" -->
+          <button
+            class="btn bg-body-secondary text-start w-100 font-monospace text-uppercase text-meta lh-lg small"
+            data-bs-toggle="collapse"
+            data-bs-target="#servicesCollapse"
+            aria-label="Toggle services menu"
+            aria-expanded="false"
+            aria-controls="servicesCollapse"
+          >
+            Services <i class="bi bi-chevron-down float-end"></i>
+          </button>
+          <div class="collapse ps-2" id="servicesCollapse">
+            <a
+              href="#"
+              class="btn btn-link text-start w-100 text-decoration-none mb-1"
+              >Freunde suchen</a
+            >
+            <a
+              href="#"
+              class="btn btn-link text-start w-100 text-decoration-none mb-1"
+              >Leihoma suchen</a
+            >
+            <a
+              href="#"
+              class="btn btn-link text-start w-100 text-decoration-none mb-1"
+              >Tiere betreuen</a
+            >
+          </div>
+
+          <!-- Other links -->
+          <a
+            href="#"
+            class="btn bg-body-secondary text-start"
+            aria-label="Go to About page"
+            >About</a
+          >
+          <a
+            href="#"
+            class="btn bg-body-secondary text-start"
+            aria-label="Go to Contact page"
+            >Contact</a
+          >
+          <a
+            href="#"
+            class="btn bg-body-secondary text-start"
+            aria-label="Go to Login page"
+            >Login</a
+          >
+          <a
+            href="#"
+            class="btn bg-body-secondary text-start"
+            aria-label="Go to Register page"
+            >Register</a
+          >
+        </div>
+      </div>
 
       <!-- Icon-Generator Prompt -->
 
