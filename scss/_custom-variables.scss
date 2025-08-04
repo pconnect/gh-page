@@ -520,6 +520,13 @@ $text-meta-link-font-size: 0.8125rem; //13px
   border: none !important;
 }
 
+// Dropdown toggle active state
+.dropdown-toggle.active {
+  background-color: $senioangel-green !important;
+  color: $gray-50 !important;
+  border: none !important;
+}
+
 // Tag component
 .tag {
   font-family: $font-family-monospace;
