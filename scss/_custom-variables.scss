@@ -384,7 +384,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
 // Floating social right
 .floating-social {
   position: fixed;
-  bottom: 20px;
+  bottom: 60px;
   right: 0;
   z-index: 1050;
   display: flex;
@@ -848,8 +848,8 @@ $text-meta-link-font-size: 0.8125rem; //13px
 
 // Back to Top Button
 $back-to-top-size: 44px !default;
-$back-to-top-right-offset: 90px !default;
-$back-to-top-bottom-offset: 20px !default;
+$back-to-top-right-offset: 70px !default;
+$back-to-top-bottom-offset: 16px !default;
 $back-to-top-offset-mobile: 20px !default;
 
 .back-to-top-wrapper {
