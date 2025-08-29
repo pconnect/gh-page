@@ -478,7 +478,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
     a.btn,
     button.btn {
       &.bg-body-secondary {
-        background-color: $body-secondary-bg;
+        background-color: $body-secondary-bg !important;
 
         &:hover,
         &:focus {
@@ -493,11 +493,15 @@ $text-meta-link-font-size: 0.8125rem; //13px
       }
     }
     .btn-link {
-      color: $body-color;
-      background-color: $body-secondary-bg;
+      color: $body-color !important;
+      background-color: $body-secondary-bg !important;
 
       &:hover,
       &:focus {
+        background-color: $senioangel-green !important;
+        color: $gray-50 !important;
+      }
+      &.active {
         background-color: $senioangel-green !important;
         color: $gray-50 !important;
       }
@@ -506,8 +510,8 @@ $text-meta-link-font-size: 0.8125rem; //13px
       a {
         &:hover,
         &:focus {
-          background-color: $senioangel-green;
-          color: $gray-50;
+          background-color: $senioangel-green !important;
+          color: $gray-50 !important;
         }
       }
     }
