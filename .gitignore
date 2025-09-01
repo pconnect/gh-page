@@ -26,3 +26,11 @@ Thumbs.db
 # Logs
 logs
 *.log 
+scss/_custom-variables.css
+.gitignore
+scss/_test-watcher.css
+.gitignore
+.gitignore
+.gitignore
+scss/_custom-variables.min.css
+scss/_test-watcher.min.css
