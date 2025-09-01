@@ -4,12 +4,10 @@
 // scss-docs-start import-stack
 // Configuration
 @import "functions";
-
+@import "mixins";
 @import "variables";
 @import "variables-dark";
-
 @import "maps";
-@import "mixins";
 @import "utilities";
 
 // Layout & components
