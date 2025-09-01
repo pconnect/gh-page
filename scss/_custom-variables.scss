@@ -1,3 +1,22 @@
+:root {
+  --senioangel-green: #6eb5b2;
+  --senioangel-blue: #1e2841;
+  --bs-body-color: #1e2841;
+  --bs-body-secondary-bg: #f8f9fa;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+}
+$senioangel-green: #6eb5b2;
+$senioangel-blue: #1e2841;
+$body-color: #1e2841;
+$body-secondary-bg: #f8f9fa;
+$gray-100: #f8f9fa;
+$gray-300: #dee2e6;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+
 // Link font override
 a {
   line-height: 1.6 !important;
@@ -7,12 +26,12 @@ a {
 .card:hover,
 .accordion-item:hover,
 .accordion-item:focus-within {
-  background-color: $gray-200;
+  background-color:  var(--bs-gray-300);
 }
 
 // Accordion icon size and color
 $accordion-icon-size: 2rem !default; //32px
-$accordion-icon-bg: $gray-100 !default;
+$accordion-icon-bg:  var(--bs-gray-300) !default;
 
 // Rounding and margins
 $accordion-icon-radius: 50% !default;
@@ -38,10 +57,10 @@ $accordion-icon-margin-left: 1.5rem !default;
     align-items: center;
     width: $accordion-icon-size;
     height: $accordion-icon-size;
-    background-color: $accordion-icon-bg;
-    color: $accordion-icon-color;
-    border-radius: $accordion-icon-radius;
-    margin-left: $accordion-icon-margin-left;
+    background-color: var(--accordion-icon-bg);
+    color: var(--accordion-icon-color);
+    border-radius: var(--accordion-icon-radius);
+    margin-left: var(--accordion-icon-margin-left);
 
     .icon {
       display: block;
@@ -75,7 +94,7 @@ $accordion-icon-margin-left: 1.5rem !default;
   transition: background 0.2s;
 }
 .accordion-item.open {
-  background-color: $gray-200 !important;
+  background-color: var(--bs-gray-300) !important;
 }
 .accordion-item.open .accordion-button {
   background-color: transparent !important;
@@ -85,25 +104,21 @@ $accordion-icon-margin-left: 1.5rem !default;
 .display-1 {
   line-height: 1;
   letter-spacing: 0.0625rem;
-  font-size: map-get($display-font-sizes, 1);
 }
 
 .display-2 {
   line-height: 1;
   letter-spacing: 0.0625rem;
-  font-size: map-get($display-font-sizes, 2);
 }
 
 .display-3 {
   line-height: 1.1;
   letter-spacing: 0;
-  font-size: map-get($display-font-sizes, 3);
 }
 
 .display-4 {
   line-height: 1.2;
   letter-spacing: 0;
-  font-size: map-get($display-font-sizes, 4);
 }
 
 // Bootstrap h2–h6 overrides
@@ -196,8 +211,8 @@ $text-meta-link-font-size: 0.8125rem; //13px
 
 // Custom checkbox styles
 .form-check-input[type="checkbox"] {
-  border: 1.5px solid $black;
-  background-color: $white;
+  border: 1.5px solid var(--bs-black);
+  background-color: var(--bs-white);
   width: 1em;
   height: 1em;
   border-radius: 4px;
@@ -205,8 +220,8 @@ $text-meta-link-font-size: 0.8125rem; //13px
   transition: border-color 0.2s, background-color 0.2s;
 }
 .form-check-input[type="checkbox"]:checked {
-  background-color: $white;
-  border-color: $black;
+  background-color: var(--bs-white);
+  border-color: var(--bs-black);
   /* SVG checkmark in primary color */
   background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 8.5L7 11.5L12 5.5' stroke='%236eb5b2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -235,22 +250,18 @@ $text-meta-link-font-size: 0.8125rem; //13px
 
 // Dropdown
 .dropdown.show .dropdown-toggle {
-  background-color: $senioangel-green;
-  color: $gray-50;
+  background-color: var(--senioangel-green);
+  color: var(--bs-gray-50);
   border: none;
 }
-.dropdown-menu {
-  width: 100%;
-  min-width: unset;
-}
 .dropdown-toggle {
-  background-color: $body-secondary-bg;
-  color: $body-color;
+  background-color: var(--bs-body-secondary-bg);
+  color: var(--bs-body-color);
 
   &:hover,
   &:focus {
-    background-color: $senioangel-green;
-    color: $gray-50;
+    background-color: var(--senioangel-green);
+    color: var(--bs-gray-50);
   }
 }
 
@@ -262,28 +273,27 @@ $text-meta-link-font-size: 0.8125rem; //13px
   .custom-select__button {
     width: 100%;
     padding: 1rem 1.25rem;
-    font-family: $font-family-monospace;
+    font-family: var(--bs-font-family-monospace);
     font-size: 0.875rem; // 14px - text-meta
     font-weight: 400;
     line-height: 1.6; // lh-lg
     letter-spacing: 0.0625rem; // 1px
     text-transform: uppercase;
     text-align: left;
-    color: $body-color;
-    background-color: $gray-100;
-    border: 1px solid $gray-300;
+    color: var(--bs-body-color);
+    background-color:  var(--bs-gray-100);
+    border: 1px solid  var(--bs-gray-300);
     border-radius: 0.5rem;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      background-color: $gray-200;
+      background-color: var(--bs-gray-300);
     }
 
     &:focus {
       outline: none;
-      border-color: $senioangel-green;
-      box-shadow: 0 0 0 0.2rem rgba($senioangel-green, 0.25);
+      border-color: var(--senioangel-green);
     }
 
     &::after {
@@ -296,7 +306,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
       height: 0;
       border-left: 5px solid transparent;
       border-right: 5px solid transparent;
-      border-top: 5px solid $gray-800;
+      border-top: 5px solid var(--bs-gray-500);
       transition: transform 0.2s ease-in-out;
     }
 
@@ -311,8 +321,8 @@ $text-meta-link-font-size: 0.8125rem; //13px
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: $white;
-    border: 1px solid $gray-300;
+    background-color: var(--bs-white);
+    border: 1px solid var(--bs-gray-500);
     border-top: none;
     border-radius: 0 0 0.5rem 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -328,27 +338,27 @@ $text-meta-link-font-size: 0.8125rem; //13px
   .custom-select__option {
     width: 100%;
     padding: 0.75rem 1.25rem;
-    font-family: $font-family-monospace;
+    font-family: var(--bs-font-family-monospace);
     font-size: 0.875rem; // 14px - text-meta
     font-weight: 400;
     line-height: 1.6; // lh-lg
     letter-spacing: 0.0625rem; // 1px
     text-transform: uppercase;
     text-align: left;
-    color: $body-color;
-    background-color: $body-secondary-bg;
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-secondary-bg);
     border: none;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
 
     &:hover {
-      background-color: $senioangel-green;
-      color: $gray-50;
+      background-color: var(--senioangel-green);
+      color: var(--bs-gray-50);
     }
 
     &.selected {
-      background-color: $senioangel-green;
-      color: $gray-50;
+      background-color: var(--senioangel-green);
+      color: var(--bs-gray-50);
     }
   }
 }
@@ -364,18 +374,18 @@ $text-meta-link-font-size: 0.8125rem; //13px
     position: absolute;
     top: 0.625rem; // 10px
     left: 1.25rem; // 20px
-    font-family: $font-family-monospace;
+    font-family: var(--bs-font-family-monospace);
     font-size: 0.875rem; // 14px - text-meta
     font-weight: 400;
     line-height: 1.6; // lh-lg
     letter-spacing: 0.0625rem; // 1px
     text-transform: uppercase;
-    color: $gray-600;
+    color: var(--bs-gray-600);
     pointer-events: none;
     transition: all 0.2s ease-in-out;
 
     &.active {
-      color: $senioangel-green;
+      color: var(--senioangel-green);
       transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
     }
   }
@@ -395,8 +405,8 @@ $text-meta-link-font-size: 0.8125rem; //13px
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background-color: $gray-100;
-    color: $body-color;
+    background-color:  var(--bs-gray-100);
+    color: var(--bs-body-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -405,28 +415,22 @@ $text-meta-link-font-size: 0.8125rem; //13px
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: $senioangel-green;
-      color: $gray-50;
+      background-color: var(--senioangel-green);
+      color: var(--bs-gray-50);
     }
   }
 }
-@each $color, $value in $theme-colors {
-  .btn-outline-#{$color}:hover,
-  .btn-outline-#{$color}:focus,
-  .btn-outline-#{$color}:active {
-    color: $gray-50 !important;
-  }
-}
+
 
 // Offcanvas
 // Offcanvas toggle
 .btn-offcanvas-toggle {
-  background-color: $secondary;
-  color: $gray-50;
+  background-color: var(--bs-secondary);
+  color: var(--bs-gray-50);
 
   &:hover,
   &:focus {
-    background-color: $senioangel-green;
+    background-color: var(--senioangel-green);
     outline: none;
   }
 
@@ -437,7 +441,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
       position: absolute;
       width: 22px;
       height: 2px;
-      background-color: $gray-50;
+      background-color: var(--bs-gray-50);
       transition: background-color 0.3s ease-in-out;
     }
     &::before {
@@ -453,12 +457,12 @@ $text-meta-link-font-size: 0.8125rem; //13px
 .navbar {
   .btn {
     &.bg-body-secondary {
-      background-color: $body-secondary-bg;
+      background-color: var(--bs-body-secondary-bg);
 
       &:hover,
       &:focus {
-        background-color: $senioangel-green !important;
-        color: $gray-50 !important;
+        background-color: var(--senioangel-green) !important;
+        color: var(--bs-gray-50) !important;
       }
     }
   }
@@ -466,8 +470,8 @@ $text-meta-link-font-size: 0.8125rem; //13px
   .dropdown-toggle {
     &:hover,
     &:focus {
-      background-color: $senioangel-green !important;
-      color: $gray-50 !important;
+      background-color: var(--senioangel-green) !important;
+      color: var(--bs-gray-50) !important;
     }
   }
 }
@@ -478,40 +482,40 @@ $text-meta-link-font-size: 0.8125rem; //13px
     a.btn,
     button.btn {
       &.bg-body-secondary {
-        background-color: $body-secondary-bg !important;
+        background-color: var(--bs-body-secondary-bg) !important;
 
         &:hover,
         &:focus {
-          background-color: $senioangel-green !important;
-          color: $gray-50 !important;
+          background-color: var(--senioangel-green) !important;
+          color: var(--bs-gray-50) !important;
         }
 
         &.active {
-          background-color: $senioangel-green !important;
-          color: $gray-50 !important;
+          background-color: var(--senioangel-green) !important;
+          color: var(--bs-gray-50) !important;
         }
       }
     }
     .btn-link {
-      color: $body-color !important;
-      background-color: $body-secondary-bg !important;
+      color: var(--bs-body-color) !important;
+      background-color: var(--bs-body-secondary-bg) !important;
 
       &:hover,
       &:focus {
-        background-color: $senioangel-green !important;
-        color: $gray-50 !important;
+        background-color: var(--senioangel-green) !important;
+        color: var(--bs-gray-50) !important;
       }
       &.active {
-        background-color: $senioangel-green !important;
-        color: $gray-50 !important;
+        background-color: var(--senioangel-green) !important;
+        color: var(--bs-gray-50) !important;
       }
     }
     .collapse {
       a {
         &:hover,
         &:focus {
-          background-color: $senioangel-green !important;
-          color: $gray-50 !important;
+          background-color: var(--senioangel-green) !important;
+          color: var(--bs-gray-50) !important;
         }
       }
     }
@@ -519,25 +523,25 @@ $text-meta-link-font-size: 0.8125rem; //13px
 }
 // Navigation buttons active state
 .btn.bg-body-secondary.active {
-  background-color: $senioangel-green !important;
-  color: $gray-50 !important;
+  background-color: var(--senioangel-green) !important;
+  color: var(--bs-gray-50) !important;
   border: none !important;
 }
 
 // Dropdown toggle active state
 .dropdown-toggle.active {
-  background-color: $senioangel-green !important;
-  color: $gray-50 !important;
+  background-color: var(--senioangel-green) !important;
+  color: var(--bs-gray-50) !important;
   border: none !important;
 }
 
 // Tag component
 .tag {
-  font-family: $font-family-monospace;
-  font-size: $font-size-sm;
-  line-height: $line-height-base;
-  background-color: $senioangel-green;
-  color: $gray-50;
+  font-family: var(--bs-font-family-monospace);
+  font-size: var(--bs-font-size-sm);
+  line-height: var(--bs-line-height-base);
+  background-color: var(--senioangel-green);
+  color: var(--bs-gray-50);
   padding: 0.35rem 0.75rem;
   border-radius: 2rem;
   display: inline-flex;
@@ -563,26 +567,25 @@ $text-meta-link-font-size: 0.8125rem; //13px
 
 .tag-input {
   min-width: 120px;
-  font-family: $font-family-monospace;
-  font-size: $font-size-sm;
-  line-height: $line-height-base;
-  color: $body-color;
-  background-color: $gray-100;
+  font-family: var(--bs-font-family-monospace);
+  font-size: var(--bs-font-size-sm);
+  line-height: var(--bs-line-height-base);
+  color: var(--bs-body-color);
+  background-color:  var(--bs-gray-100);
   outline: none;
   padding: 0.35rem 0.75rem;
 
   &::placeholder {
     color: lighten($body-color, 30%);
-    font-family: $font-family-monospace;
-    font-size: $font-size-sm;
-    line-height: $line-height-base;
+    font-family: var(--bs-font-family-monospace);
+    font-size: var(--bs-font-size-sm);
+    line-height: var(--bs-line-height-base);
   }
 }
 
 // Icon "+" hover
 .icon-toggle {
   background-color: #fff;
-  color: $green;
 
   transition: background-color 0.3s ease, color 0.3s ease;
 
@@ -593,12 +596,12 @@ $text-meta-link-font-size: 0.8125rem; //13px
   &:hover,
   &:focus {
     background-color: #6eb5b2;
-    color: $white;
+    color: var(--bs-white);
   }
 
   &:hover i,
   &:focus i {
-    color: $white;
+    color: var(--bs-white);
   }
 }
 .icon-bg-hover {
@@ -614,7 +617,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
   transition: color 0.2s ease;
 
   &:hover {
-    color: $white !important;
+    color: var(--bs-white) !important;
   }
 }
 
@@ -626,13 +629,13 @@ $text-meta-link-font-size: 0.8125rem; //13px
   line-height: 55px;
   text-align: center;
   display: inline-block;
-  color: $white;
+  color: var(--bs-white);
   background-color: $senioangel-green;
   border-radius: 50%;
   transition: all 0.3s ease-out;
 
   &:hover {
-    color: $white;
+    color: var(--bs-white);
     background-color: $senioangel-blue;
   }
 }
@@ -656,19 +659,19 @@ $text-meta-link-font-size: 0.8125rem; //13px
   text-align: center;
   display: inline-block;
   color: $senioangel-green;
-  background-color: $white;
+  background-color: var(--bs-white);
   border-radius: 50%;
   transition: all 0.3s ease-out;
 
   &:hover {
-    color: $white;
+    color: var(--bs-white);
     background-color: $senioangel-blue;
   }
 }
 
 // Bounce on hover .header-icon
 .header-icon:hover .flaticon-icon {
-  color: $white;
+  color: var(--bs-white);
 
   animation: icon-bounce 0.8s ease-out infinite;
 }
@@ -704,18 +707,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
     }
   }
 
-  .cart-item-remove {
-    color: $danger;
-    cursor: pointer;
-    padding: 5px;
-    font-size: 1rem;
-    opacity: 0.7;
-    transition: opacity 0.2s ease, color 0.2s ease;
 
-    &:hover {
-      color: darken($danger, 10%);
-    }
-  }
 }
 
 // Social Media Icons
@@ -729,7 +721,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background-color: $white;
+    background-color: var(--bs-white);
     text-decoration: none;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     margin: 5px auto 0 auto;
@@ -742,7 +734,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
 
     i {
       font-size: 32px;
-      color: $black;
+      color: var(--bs-black);
     }
 
     .fa-facebook {
@@ -758,6 +750,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
         #515bd4
       );
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       font-size: 24px;
     }
@@ -767,7 +760,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
     }
 
     .fa-tiktok {
-      color: $black;
+      color: var(--bs-black);
     }
   }
 }
@@ -777,10 +770,10 @@ $text-meta-link-font-size: 0.8125rem; //13px
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  border: 2px solid $white;
+  border: 2px solid var(--bs-white);
   padding: 5px;
   margin: 0 15px;
-  background: $senioangel-green;
+  background: var(--senioangel-green);
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
