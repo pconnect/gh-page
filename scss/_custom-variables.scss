@@ -886,7 +886,7 @@ $back-to-top-offset-mobile: 20px !default;
 
 //Arrow animation
 $circle-size: 32px !default;
-$circle-border-width: 2px !default;
+$circle-border-width: 1px !default;
 
 .circle-container {
   position: relative;
@@ -902,6 +902,7 @@ $circle-border-width: 2px !default;
   height: 100%;
   border-radius: 50%;
   border: $circle-border-width solid currentColor;
+  opacity: 0.5;
 }
 
 .fly-arrow-inside {
