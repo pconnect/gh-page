@@ -33,7 +33,7 @@
   white-space: $btn-white-space;
   vertical-align: middle;
   cursor: if($enable-button-pointers, pointer, null);
-  user-select: none;
+  
   border: var(--#{$prefix}btn-border-width) solid
     var(--#{$prefix}btn-border-color);
   @include border-radius(var(--#{$prefix}btn-border-radius));
