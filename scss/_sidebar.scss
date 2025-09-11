@@ -14,16 +14,8 @@ body.sidebar-visible .sidebar {
 
 /* Page wrapper margins for sidebar states */
 .page-wrapper {
-  margin-left: 300px;
+  margin-left: 0; /* No margin by default */
   transition: margin-left 0.3s ease;
-}
-
-body.sidebar-folded .page-wrapper {
-  margin-left: 60px; /* 48px rail width + 12px offset */
-}
-
-body.sidebar-visible .page-wrapper {
-  margin-left: 300px;
 }
 
 .sidebar .btn-close {
@@ -114,4 +106,29 @@ body.sidebar-visible .page-wrapper {
 /* Sidebar content smooth appearance */
 #sidebarNav .nav-item {
   transition: all 0.2s ease;
+}
+/* Mobile and tablet: below 1200px - no sidebar, no margins */
+@media (max-width: 1199px) {
+  .page-wrapper {
+    margin-left: 0 !important; /* No margin on mobile/tablet */
+  }
+
+  body.sidebar-folded .page-wrapper,
+  body.sidebar-visible .page-wrapper {
+    margin-left: 0 !important; /* Override any sidebar states on mobile */
+  }
+}
+/* Desktop: 1200px and up - sidebar is visible */
+@media (min-width: 1200px) {
+  .page-wrapper {
+    margin-left: 300px; /* Full sidebar width */
+  }
+
+  body.sidebar-folded .page-wrapper {
+    margin-left: 60px; /* 48px rail width + 12px offset */
+  }
+
+  body.sidebar-visible .page-wrapper {
+    margin-left: 300px;
+  }
 }
