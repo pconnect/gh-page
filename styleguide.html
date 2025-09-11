@@ -54,7 +54,7 @@
       >Skip to main content</a
     >
 
-    <div class="container mt-4" id="main-content">
+    <div class="container-fluid mt-4" id="main-content">
       <h1 class="text-center">Styleguide</h1>
       <hr />
       <h2 class="mt-2 text-center">Typography</h2>
@@ -103,42 +103,54 @@
       <div class="d-flex gap-2 border-0">
         <div class="card border-0">
           <div class="card-header bg-light border-0">
-            <span class="card-title text-dark-50 fs-sm text-small">.bg-light</span>
+            <span class="card-title text-dark-50 fs-sm text-small"
+              >.bg-light</span
+            >
           </div>
           <div class="card-body bg-light border-0"></div>
           <div class="card-footer bg-light border-0"></div>
         </div>
         <div class="card border-0">
           <div class="card-header bg-primary border-0">
-            <span class="card-title text-gray-50 fs-sm text-small">.bg-primary</span>
+            <span class="card-title text-gray-50 fs-sm text-small"
+              >.bg-primary</span
+            >
           </div>
           <div class="card-body bg-primary border-0"></div>
           <div class="card-footer bg-primary border-0"></div>
         </div>
         <div class="card border-0">
           <div class="card-header bg-secondary border-0">
-            <span class="card-title text-gray-50 fs-sm text-small">.bg-secondary</span>
+            <span class="card-title text-gray-50 fs-sm text-small"
+              >.bg-secondary</span
+            >
           </div>
           <div class="card-body bg-secondary border-0"></div>
           <div class="card-footer bg-secondary border-0"></div>
         </div>
         <div class="card border-0">
           <div class="card-header bg-info border-0">
-            <span class="card-title text-gray-50 fs-sm text-small">.bg-info</span>
+            <span class="card-title text-gray-50 fs-sm text-small"
+              >.bg-info</span
+            >
           </div>
           <div class="card-body bg-info border-0"></div>
           <div class="card-footer bg-info border-0"></div>
         </div>
         <div class="card border-0">
           <div class="card-header bg-dark border-0">
-            <span class="card-title text-gray-50 fs-sm text-small">.bg-dark</span>
+            <span class="card-title text-gray-50 fs-sm text-small"
+              >.bg-dark</span
+            >
           </div>
           <div class="card-body bg-dark border-0"></div>
           <div class="card-footer bg-dark border-0"></div>
         </div>
         <div class="card border-0">
           <div class="card-header bg-body-secondary border-0">
-            <span class="card-title text-dark-50 fs-sm text-small">.bg-body-secondary</span>
+            <span class="card-title text-dark-50 fs-sm text-small"
+              >.bg-body-secondary</span
+            >
           </div>
           <div class="card-body bg-body-secondary border-0"></div>
           <div class="card-footer bg-body-secondary border-0"></div>
@@ -595,6 +607,70 @@
           />
         </a>
 
+        <div
+          class="col-xxl-2 d-none d-xxl-flex flex-xxl-column align-items-center"
+          style="min-width: 240px"
+        >
+          <ul
+            class="d-xl-flex flex-xxl-column list-unstyled align-items-center mb-0 gap-1"
+          >
+            <li>
+              <a
+                href="#"
+                class="d-flex align-items-center text-decoration-none"
+              >
+                <div
+                  class="d-flex justify-content-center align-items-center gap-1"
+                >
+                  <div
+                    class="header-icon d-flex justify-content-center align-items-center"
+                  >
+                    <span
+                      class="flaticon-icon d-flex justify-content-center align-items-center"
+                      style="width: 40px; height: 40px"
+                    >
+                      <i class="flaticon-mail icon-20"></i>
+                    </span>
+                  </div>
+
+                  <span class="text-meta-link font-monospace"
+                    >affiliate@senioangel.de</span
+                  >
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="tel:0231224000301"
+                class="d-flex align-items-center text-decoration-none"
+              >
+                <div
+                  class="d-flex justify-content-center align-items-center gap-1"
+                >
+                  <div
+                    class="header-icon d-flex justify-content-center align-items-center"
+                  >
+                    <span
+                      class="flaticon-icon d-flex justify-content-center align-items-center"
+                      style="width: 40px; height: 40px"
+                    >
+                      <i class="flaticon-headphone icon-20"></i>
+                    </span>
+                  </div>
+                  <div class="d-flex flex-column">
+                    <span class="text-meta-link font-monospace"
+                      >0231 - 224000301</span
+                    >
+                    <span class="text-meta-link font-monospace"
+                      >Mo.–Fr. 09.00-13.00 Uhr</span
+                    >
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
         <!-- Burger-button (not on desktop) -->
         <button
           class="btn btn-offcanvas-toggle d-lg-none py-1 px-2"
@@ -611,7 +687,7 @@
           <!-- Dropdown "Services" -->
           <div class="dropdown" style="width: 200px">
             <button
-              class="btn dropdown-toggle w-100 font-monospace text-uppercase"
+              class="btn bg-body-secondary dropdown-toggle w-100 font-monospace text-uppercase"
               type="button"
               data-bs-toggle="dropdown"
               aria-label="Services dropdown menu"
@@ -650,6 +726,43 @@
             aria-label="Go to Register page"
             >Register</a
           >
+          <!-- Language Switcher -->
+          <div class="dropdown">
+            <button
+              class="btn bg-body-secondary dropdown-toggle font-monospace text-uppercase"
+              id="languageDropdown"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                id="selected-flag"
+                class="d-none d-xxl-inline-block"
+                src="https://flagcdn.com/20x15/de.png"
+                width="24"
+                height="24"
+                alt="DE"
+              />
+              DE
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center gap-2"
+                  href="#"
+                >
+                  <img
+                    class="flag-icon me-1"
+                    src="https://flagcdn.com/20x15/gb.png"
+                    width="24"
+                    height="24"
+                    alt="en"
+                  />
+                  EN
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
 
@@ -721,6 +834,367 @@
             aria-label="Go to Register page"
             >Register</a
           >
+          <!-- Language Switcher -->
+          <div class="dropdown w-100">
+            <button
+              class="btn bg-body-secondary text-start dropdown-toggle w-100 font-monospace text-uppercase lh-1"
+              id="languageDropdown"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                id="selected-flag"
+                src="https://flagcdn.com/20x15/de.png"
+                width="24"
+                height="24"
+                alt="DE"
+              />
+              DE
+            </button>
+            <ul class="dropdown-menu w-100" aria-labelledby="languageDropdown">
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center gap-2"
+                  href="#"
+                >
+                  <img
+                    class="flag-icon me-1"
+                    src="https://flagcdn.com/20x15/gb.png"
+                    width="24"
+                    height="24"
+                    alt="en"
+                  />
+                  EN
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="col-12 d-flex d-xl-none align-items-center justify-content-center"
+        >
+          <ul
+            class="d-flex flex-column list-unstyled align-items-center my-2 gap-1"
+          >
+            <li>
+              <a
+                href="#"
+                class="d-flex align-items-center text-decoration-none"
+              >
+                <div
+                  class="d-flex justify-content-center align-items-center gap-1"
+                >
+                  <div
+                    class="header-icon d-flex justify-content-center align-items-center"
+                  >
+                    <span
+                      class="flaticon-icon d-flex justify-content-center align-items-center"
+                      style="width: 40px; height: 40px"
+                    >
+                      <i class="flaticon-mail icon-20"></i>
+                    </span>
+                  </div>
+
+                  <span class="text-meta-link font-monospace"
+                    >affiliate@senioangel.de</span
+                  >
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="tel:0231224000301"
+                class="d-flex align-items-center text-decoration-none"
+              >
+                <div
+                  class="d-flex justify-content-center align-items-center gap-1"
+                >
+                  <div
+                    class="header-icon d-flex justify-content-center align-items-center"
+                  >
+                    <span
+                      class="flaticon-icon d-flex justify-content-center align-items-center"
+                      style="width: 40px; height: 40px"
+                    >
+                      <i class="flaticon-headphone icon-20"></i>
+                    </span>
+                  </div>
+                  <div class="d-flex flex-column">
+                    <span class="text-meta-link font-monospace"
+                      >0231 - 224000301</span
+                    >
+                    <span class="text-meta-link font-monospace"
+                      >Mo.–Fr. 09.00-13.00 Uhr</span
+                    >
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- Sidebar -->
+      <h3 class="text-uppercase text-center my-3">Sidebar</h3>
+
+      <!-- Desktop sidebar + navigation rail -->
+      <!-- <div
+        class="d-none d-xl-block position-absolute 
+        h-100"
+        style="--header-h: 110px; top: 110px"
+      > -->
+      <div class="d-flex mb-4" style="--header-h: 110px">
+        <!-- The sidebar itself (by default OPEN) -->
+        <div id="sidebarWrap" class="collapse show">
+          <!-- <nav id="sidebarNav" class="sidebar shadow position-fixed 
+            bg-body"
+            style="
+              top: var(--header-h);
+              width: 300px;
+              z-index: 1040;
+              height: 85vh;
+            "> -->
+          <nav
+            id="sidebarNav"
+            class="sidebar shadow bg-body"
+            style="width: 300px; height: 500px"
+          >
+            <!-- <div
+              class="p-2"
+              style="max-height: calc(100vh - var
+              (--header-h)); overflow: auto"
+            > -->
+            <div class="p-2" style="height: 100%; overflow: auto">
+              <ul class="nav flex-column">
+                <!-- Title + close button -->
+                <li
+                  class="nav-item d-flex justify-content-between align-items-center"
+                >
+                  <div
+                    class="text-muted small fw-bold text-uppercase px-2 py-1 font-monospace text-meta"
+                  >
+                    Main
+                  </div>
+                  <button
+                    type="button"
+                    id="sidebarCloseBtn"
+                    class="btn-close"
+                    aria-label="Close"
+                  ></button>
+                </li>
+
+                <!-- Dashboard -->
+                <li class="nav-item mb-2">
+                  <a
+                    href="#"
+                    class="btn bg-body-secondary text-start w-100 font-monospace text-uppercase text-meta lh-lg small"
+                  >
+                    <i class="link-icon me-1" data-feather="box"></i>Dashboard
+                  </a>
+                </li>
+
+                <!-- Profile management -->
+                <li class="nav-item">
+                  <button
+                    class="btn bg-body-secondary mb-1 text-start w-100 font-monospace text-uppercase text-meta lh-lg small"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#userDataManagement"
+                    aria-label="Toggle user data management menu"
+                    aria-expanded="false"
+                    aria-controls="userDataManagement"
+                  >
+                    Mein Profile Verwaltung
+                    <i class="bi bi-chevron-down float-end"></i>
+                  </button>
+                  <div class="collapse" id="userDataManagement">
+                    <a
+                      href="#"
+                      class="btn bg-body-secondary text-start w-100 text-decoration-none text-uppercase mb-1"
+                      >Profile List</a
+                    >
+
+                    <a
+                      href="#"
+                      class="btn bg-body-secondary text-start w-100 text-decoration-none text-uppercase mb-1"
+                      >Profile Edit</a
+                    >
+
+                    <a
+                      href="#"
+                      class="btn bg-body-secondary text-start w-100 text-decoration-none text-uppercase mb-1"
+                      >Profile Add</a
+                    >
+                  </div>
+                </li>
+
+                <!-- Contacts -->
+
+                <li class="nav-item my-2">
+                  <a
+                    href="#"
+                    class="btn bg-body-secondary text-start w-100 font-monospace text-uppercase text-meta lh-lg small"
+                    >Contact
+                  </a>
+                </li>
+
+                <!-- Referred users -->
+
+                <li class="nav-item mb-2">
+                  <button
+                    class="btn bg-body-secondary mb-1 text-start w-100 font-monospace text-uppercase text-meta lh-lg small"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#refereds"
+                    aria-label="Toggle referred users menu"
+                    aria-expanded="false"
+                    aria-controls="refereds"
+                  >
+                    Geworbene Benutzer<i
+                      class="bi bi-chevron-down float-end"
+                    ></i>
+                  </button>
+                  <div class="collapse" id="refereds">
+                    <a
+                      href="#"
+                      class="btn bg-body-secondary text-start w-100 text-decoration-none text-uppercase mb-1"
+                    >
+                      Geworbene Benutzer Box
+                    </a>
+                    <a
+                      href="#"
+                      class="btn bg-body-secondary text-start w-100 text-decoration-none text-uppercase mb-1"
+                    >
+                      Geworbene Benutzer Saas
+                    </a>
+                  </div>
+                </li>
+              </ul>
+              <div
+                class="col-12 d-none d-xl-flex d-xxl-none align-items-center"
+                style="min-width: 240px"
+              >
+                <ul
+                  class="d-flex flex-column list-unstyled align-items-center mb-0 gap-1"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="d-flex align-items-center text-decoration-none"
+                    >
+                      <div
+                        class="d-flex justify-content-center align-items-center gap-1"
+                      >
+                        <div
+                          class="header-icon d-flex justify-content-center align-items-center"
+                        >
+                          <span
+                            class="flaticon-icon d-flex justify-content-center align-items-center"
+                            style="width: 40px; height: 40px"
+                          >
+                            <i class="flaticon-mail icon-20"></i>
+                          </span>
+                        </div>
+
+                        <span class="text-meta-link font-monospace"
+                          >affiliate@senioangel.de</span
+                        >
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="tel:0231224000301"
+                      class="d-flex align-items-center text-decoration-none"
+                    >
+                      <div
+                        class="d-flex justify-content-center align-items-center gap-1"
+                      >
+                        <div
+                          class="header-icon d-flex justify-content-center align-items-center"
+                        >
+                          <span
+                            class="flaticon-icon d-flex justify-content-center align-items-center"
+                            style="width: 40px; height: 40px"
+                          >
+                            <i class="flaticon-headphone icon-20"></i>
+                          </span>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <span class="text-meta-link font-monospace"
+                            >0231 - 224000301</span
+                          >
+                          <span class="text-meta-link font-monospace"
+                            >Mo.–Fr. 09.00-13.00 Uhr</span
+                          >
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Narrow vertical «rail» with icons — show ONLY when the sidebar is closed  -->
+        <!-- <div id="navRail" class="position-fixed start-0 d-none 
+          d-lg-flex flex-column align-items-center 
+          gap-3 bg-body-secondary shadow rounded-end"
+          style="
+            top: var(--header-h);
+            width: 48px;
+            height: calc(100vh - var(--header-h));
+            z-index: 1050;
+          "> -->
+        <div
+          id="navRail"
+          class="d-flex flex-column align-items-center gap-3 bg-body-secondary shadow rounded-end mb-4"
+          style="width: 48px; height: 400px"
+        >
+          <!-- burger -->
+          <button
+            id="railOpenBtn"
+            class="btn p-0 mt-2"
+            data-bs-toggle="tooltip"
+            title="Menü"
+          >
+            <i class="bi bi-list icon-24"></i>
+          </button>
+
+          <hr class="w-100 m-0" />
+
+          <!-- icons of sections (click opens the sidebar and expands the section) -->
+
+          <button
+            class="btn p-0"
+            data-target="#userDataManagement"
+            data-bs-toggle="tooltip"
+            title="Mein Profile Verwaltung"
+          >
+            <i class="bi bi-person icon-24"></i>
+          </button>
+
+          <button
+            class="btn p-0"
+            data-target="#contacts"
+            data-bs-toggle="tooltip"
+            title="Contact"
+          >
+            <i class="bi bi-list-task icon-24"></i>
+          </button>
+
+          <button
+            class="btn p-0"
+            data-target="#refereds"
+            data-bs-toggle="tooltip"
+            title="Geworbene Benutzer"
+          >
+            <i class="bi bi-people icon-24"></i>
+          </button>
+
+          <div class="mt-auto mb-2 small text-muted">SA</div>
         </div>
       </div>
 
@@ -817,17 +1291,31 @@
 
       <!-- Buttons -->
       <h3 class="my-4 text-center">Buttons</h3>
-      <button class="btn btn-primary text-gray-50 text-uppercase">
-        btn-primary
-      </button>
-      <button class="btn btn-secondary text-gray-50 text-uppercase">
-        btn-secondary
-      </button>
+      <div class="d-flex gap-2">
+        <button class="btn btn-primary text-gray-50 text-uppercase">
+          btn-primary
+        </button>
+        <button class="btn btn-secondary text-gray-50 text-uppercase">
+          btn-secondary
+        </button>
+        <div class="navbar">
+          <button class="btn bg-body-secondary text-uppercase">
+            btn-body-secondary
+          </button>
+        </div>
 
-      <button class="btn btn-gray-200 text-uppercase">btn-gray-200</button>
-      <button class="btn btn-outline-primary text-uppercase">
-        btn-outline-primary
-      </button>
+        <button class="btn btn-outline-primary text-uppercase">
+          btn-outline-primary
+        </button>
+        <a
+          href="#"
+          class="link-with-arrow d-flex align-items-center justify-content-center btn btn-dark text-gray-50 text-uppercase font-monospace"
+          >btn with arrow
+          <div class="circle-container ms-1">
+            <i class="bi bi-arrow-up-right fly-arrow-inside"></i>
+          </div>
+        </a>
+      </div>
 
       <hr />
       <!-- Tables -->
@@ -1964,6 +2452,191 @@
               });
             });
         }
+        // Sidebar functionality
+
+        const wrap = document.getElementById("sidebarWrap");
+        const rail = document.getElementById("navRail");
+        const closeB = document.getElementById("sidebarCloseBtn");
+        const openB = document.getElementById("railOpenBtn");
+
+        // Variables for scroll detection
+        let sidebarHiddenByScroll = false; // Track if sidebar was hidden by scroll
+
+        // show/hide the rail depending on the state of the sidebar
+        function syncRail() {
+          const opened = wrap.classList.contains("show");
+
+          if (opened) {
+            // Hide rail - just add d-none class, CSS transition will handle animation
+            setTimeout(() => {
+              rail.classList.add("d-none");
+            }, 300); // Wait for sidebar animation to complete
+          } else {
+            // Show rail - just remove d-none class, CSS transition will handle animation
+            rail.classList.remove("d-none");
+          }
+
+          if (window.feather) feather.replace();
+        }
+
+        // Open/close the sidebar (works without bootstrap)
+        function openSidebar() {
+          if (window.bootstrap?.Collapse) {
+            bootstrap.Collapse.getOrCreateInstance(wrap, {
+              toggle: false,
+            }).show();
+          } else {
+            wrap.classList.add("show");
+          }
+          syncRail();
+        }
+        function closeSidebar() {
+          if (window.bootstrap?.Collapse) {
+            bootstrap.Collapse.getOrCreateInstance(wrap, {
+              toggle: false,
+            }).hide();
+          } else {
+            wrap.classList.remove("show");
+          }
+          syncRail();
+        }
+
+        // Auto hide/show sidebar based on scroll position and footer visibility
+        function handleScrollBehavior() {
+          const footer = document.querySelector("footer");
+          if (!footer) return;
+
+          const footerRect = footer.getBoundingClientRect();
+          const viewportHeight = window.innerHeight;
+
+          // Use same distance for both hide and show to make it consistent
+          const triggerDistance = -10; // Same distance for hide/show
+
+          // Check if footer is at trigger distance
+          const footerAtTriggerDistance =
+            footerRect.top < viewportHeight + triggerDistance;
+          const footerAwayFromTriggerDistance =
+            footerRect.top > viewportHeight + triggerDistance;
+
+          // Debug info (can be removed later)
+          const distanceToFooter = footerRect.top - viewportHeight;
+          console.log(
+            `Footer distance: ${Math.round(
+              distanceToFooter
+            )}px, At trigger: ${footerAtTriggerDistance}, Away from trigger: ${footerAwayFromTriggerDistance}, Hidden by scroll: ${sidebarHiddenByScroll}`
+          );
+
+          // Auto hide sidebar when footer reaches trigger distance and sidebar is currently open
+          if (
+            footerAtTriggerDistance &&
+            !sidebarHiddenByScroll &&
+            wrap.classList.contains("show")
+          ) {
+            // Footer reached trigger distance, hide sidebar
+            console.log("Hiding sidebar - footer at trigger distance");
+            closeSidebar();
+            sidebarHiddenByScroll = true;
+          }
+          // Auto show sidebar when footer moves away from trigger distance and it was hidden by scroll
+          else if (footerAwayFromTriggerDistance && sidebarHiddenByScroll) {
+            // Footer moved away from trigger distance, show sidebar again
+            console.log("Showing sidebar - footer away from trigger distance");
+            openSidebar();
+            sidebarHiddenByScroll = false;
+          }
+        }
+
+        // Add scroll event listener with throttling for performance
+        let scrollTimeout;
+        window.addEventListener("scroll", () => {
+          if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+          }
+          scrollTimeout = setTimeout(handleScrollBehavior, 50); // Throttle to 50ms for responsiveness
+        });
+
+        syncRail();
+
+        // Handle manual sidebar control - keep original functionality
+        openB.addEventListener("click", openSidebar);
+        closeB.addEventListener("click", closeSidebar);
+
+        wrap.addEventListener?.("shown.bs.collapse", syncRail);
+        wrap.addEventListener?.("hidden.bs.collapse", syncRail);
+
+        // icons on the rail: open the sidebar and expand the corresponding section
+        rail.querySelectorAll("button[data-target]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            // Add click animation
+            btn.style.transform = "translateX(6px) scale(1.1)";
+            btn.style.backgroundColor = "rgba(var(--bs-primary-rgb), 0.2)";
+
+            setTimeout(() => {
+              btn.style.transform = "";
+              btn.style.backgroundColor = "";
+            }, 200);
+
+            const targetSel = btn.getAttribute("data-target");
+            const target = document.querySelector(targetSel);
+            openSidebar();
+            if (!target) return;
+            if (window.bootstrap?.Collapse) {
+              bootstrap.Collapse.getOrCreateInstance(target, {
+                toggle: false,
+              }).show();
+            } else {
+              target.classList.add("show");
+            }
+
+            const trigger = document.querySelector(
+              `button[aria-controls="${target?.id}"], button#btnUser, button#btnContacts, button#btnRefereds`
+            );
+            if (trigger && target)
+              trigger.classList.toggle(
+                "collapsed",
+                !target.classList.contains("show")
+              );
+          });
+        });
+
+        // initialization of tooltips
+        if (window.bootstrap?.Tooltip) {
+          document
+            .querySelectorAll('[data-bs-toggle="tooltip"]')
+            .forEach((el) => new bootstrap.Tooltip(el));
+        }
+
+        function hook(btnSelector, targetId) {
+          const btn = document.querySelector(btnSelector);
+          const target = document.getElementById(targetId);
+          if (!btn || !target) return;
+
+          btn.classList.toggle("collapsed", !target.classList.contains("show"));
+          btn.addEventListener("click", (e) => {
+            if (!window.bootstrap?.Collapse) {
+              target.classList.toggle("show");
+              btn.classList.toggle(
+                "collapsed",
+                !target.classList.contains("show")
+              );
+            } else {
+              setTimeout(
+                () =>
+                  btn.classList.toggle(
+                    "collapsed",
+                    !target.classList.contains("show")
+                  ),
+                200
+              );
+            }
+          });
+        }
+        hook(
+          'button[data-bs-target="#userDataManagement"]',
+          "userDataManagement"
+        );
+        hook('button[data-bs-target="#contacts"]', "contacts");
+        hook('button[data-bs-target="#refereds"]', "refereds");
       });
     </script>
   </body>
