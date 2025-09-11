@@ -12,6 +12,20 @@ body.sidebar-visible .sidebar {
   transform: translateX(0);
 }
 
+/* Page wrapper margins for sidebar states */
+.page-wrapper {
+  margin-left: 300px;
+  transition: margin-left 0.3s ease;
+}
+
+body.sidebar-folded .page-wrapper {
+  margin-left: 60px; /* 48px rail width + 12px offset */
+}
+
+body.sidebar-visible .page-wrapper {
+  margin-left: 300px;
+}
+
 .sidebar .btn-close {
   color: var(--bs-gray-50);
   transition: opacity 0.2s ease;
