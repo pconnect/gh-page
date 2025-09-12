@@ -1,0 +1,134 @@
+/* Sidebar Styles */
+.sidebar {
+  transform: translateX(0); /* Open by default on desktop */
+  transition: transform 0.3s ease;
+}
+
+body.sidebar-visible .sidebar {
+  transform: translateX(0);
+}
+
+.sidebar.show {
+  transform: translateX(0);
+}
+
+/* Page wrapper margins for sidebar states */
+.page-wrapper {
+  margin-left: 0; /* No margin by default */
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar .btn-close {
+  color: var(--bs-gray-50);
+  transition: opacity 0.2s ease;
+}
+
+.sidebar .btn-close:hover {
+  opacity: 1;
+}
+
+.sidebar .btn-link {
+  color: var(--bs-body-color) !important;
+  background-color: transparent !important;
+  transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  margin-bottom: 0.25rem;
+}
+
+.sidebar .btn-link:hover,
+.sidebar .btn-link:focus {
+  background-color: var(--bs-primary) !important;
+  color: var(--bs-gray-50) !important;
+}
+
+.sidebar .btn-link.active {
+  background-color: var(--bs-primary) !important;
+  color: var(--bs-gray-50) !important;
+}
+
+/* Rotation of the arrows in the section buttons */
+.btn[data-bs-toggle="collapse"] .bi-chevron-down {
+  transition: transform 0.2s;
+}
+
+.btn:not(.collapsed) .bi-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* Smooth animations for sidebar - apply to inner nav to preserve positioning */
+#sidebarNav {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+#sidebarWrap:not(.show) #sidebarNav {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+#sidebarWrap.show #sidebarNav {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Smooth animations for navigation rail */
+#navRail {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Custom hidden class for rail with animation */
+#navRail.rail-hidden {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Override Bootstrap d-none for rail to allow transitions */
+#navRail.d-none {
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+  display: flex !important; /* Override d-none to allow transitions */
+}
+
+/* Hover effects for rail buttons */
+#navRail button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#navRail button:hover {
+  transform: translateX(4px) scale(1.05);
+  background-color: rgba(var(--bs-primary-rgb), 0.1);
+}
+
+/* Sidebar content smooth appearance */
+#sidebarNav .nav-item {
+  transition: all 0.2s ease;
+}
+/* Mobile and tablet: below 1200px - no sidebar, no margins */
+@media (max-width: 1199px) {
+  .page-wrapper {
+    margin-left: 0 !important; /* No margin on mobile/tablet */
+  }
+
+  body.sidebar-folded .page-wrapper,
+  body.sidebar-visible .page-wrapper {
+    margin-left: 0 !important; /* Override any sidebar states on mobile */
+  }
+}
+/* Desktop: 1200px and up - sidebar is visible */
+@media (min-width: 1200px) {
+  .page-wrapper {
+    margin-left: 300px; /* Full sidebar width */
+  }
+
+  body.sidebar-folded .page-wrapper {
+    margin-left: 60px; /* 48px rail width + 12px offset */
+  }
+
+  body.sidebar-visible .page-wrapper {
+    margin-left: 300px;
+  }
+}
