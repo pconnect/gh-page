@@ -26,12 +26,12 @@ a {
 .card:hover,
 .accordion-item:hover,
 .accordion-item:focus-within {
-  background-color:  var(--bs-gray-300);
+  background-color: var(--bs-gray-300);
 }
 
 // Accordion icon size and color
 $accordion-icon-size: 2rem !default; //32px
-$accordion-icon-bg:  var(--bs-gray-300) !default;
+$accordion-icon-bg: var(--bs-gray-300) !default;
 
 // Rounding and margins
 $accordion-icon-radius: 50% !default;
@@ -281,8 +281,8 @@ $text-meta-link-font-size: 0.8125rem; //13px
     text-transform: uppercase;
     text-align: left;
     color: var(--bs-body-color);
-    background-color:  var(--bs-gray-100);
-    border: 1px solid  var(--bs-gray-300);
+    background-color: var(--bs-gray-100);
+    border: 1px solid var(--bs-gray-300);
     border-radius: 0.5rem;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
@@ -405,7 +405,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background-color:  var(--bs-gray-100);
+    background-color: var(--bs-gray-100);
     color: var(--bs-body-color);
     display: flex;
     align-items: center;
@@ -420,7 +420,6 @@ $text-meta-link-font-size: 0.8125rem; //13px
     }
   }
 }
-
 
 // Offcanvas
 // Offcanvas toggle
@@ -571,7 +570,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
   font-size: var(--bs-font-size-sm);
   line-height: var(--bs-line-height-base);
   color: var(--bs-body-color);
-  background-color:  var(--bs-gray-100);
+  background-color: var(--bs-gray-100);
   outline: none;
   padding: 0.35rem 0.75rem;
 
@@ -706,8 +705,6 @@ $text-meta-link-font-size: 0.8125rem; //13px
       opacity: 1;
     }
   }
-
-
 }
 
 // Social Media Icons
@@ -777,7 +774,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
-// Loader
+// Loader 1
 .preloader-logo {
   position: relative;
   width: 120px;
@@ -840,6 +837,69 @@ $text-meta-link-font-size: 0.8125rem; //13px
   }
   50% {
     transform: scale(1.1);
+  }
+}
+
+// Loader 2
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: #fff;
+  transition: opacity 0.5s ease-out;
+  pointer-events: auto; /* Ensure it can receive events during loading */
+}
+
+/* When loading is fading out, disable pointer events */
+#loading.opacity-0 {
+  pointer-events: none;
+}
+
+/* Loading spinner animation */
+.spinner-border-custom {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.3em;
+}
+
+/* Logo animation */
+.logo-bounce {
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Main content fade in */
+main {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
