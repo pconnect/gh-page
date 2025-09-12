@@ -17,11 +17,7 @@ $gray-300: #dee2e6;
 $gray-500: #adb5bd;
 $gray-600: #6c757d;
 
-// Link font override
-a {
-  line-height: 1.6 !important;
-  letter-spacing: 0.0625rem !important; //1px
-}
+
 // Card and accordion hover effect: muted2 on hover
 .card:hover,
 .accordion-item:hover,
