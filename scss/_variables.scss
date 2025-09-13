@@ -860,10 +860,7 @@ $table-head-color: $white !default;
 
 $table-active-color: $table-color !default;
 $table-active-bg-factor: 0.1 !default;
-$table-active-bg: rgba(
-  var(--#{$prefix}emphasis-color-rgb),
-  $table-active-bg-factor
-) !default;
+$table-active-bg: rgba($body-emphasis-color, $table-active-bg-factor) !default;
 
 $table-hover-color: $table-color !default;
 $table-hover-bg-factor: 0.075 !default;
@@ -1258,7 +1255,7 @@ $form-validation-states: (
     "tooltip-color": #fff,
     "tooltip-bg-color": var(--#{$prefix}success),
     "focus-box-shadow": 0 0 $input-btn-focus-blur $input-focus-width
-      rgba(var(--#{$prefix}success-rgb), $input-btn-focus-color-opacity),
+      rgba($success, $input-btn-focus-color-opacity),
     "border-color": var(--#{$prefix}form-valid-border-color),
   ),
   "invalid": (
