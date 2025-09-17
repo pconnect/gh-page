@@ -9,6 +9,18 @@
   @each $color, $value in $colors {
     --#{$prefix}#{$color}: #{$value};
   }
+  @each $color, $value in $senioangel-colors {
+    --#{$prefix}#{$color}: #{$value};
+  }
+  @each $color, $value in $senioangel-green-colors {
+    --#{$prefix}#{$color}: #{$value};
+  }
+  @each $color, $value in $senioangel-blue-colors {
+    --#{$prefix}#{$color}: #{$value};
+  }
+  @each $color, $value in $greek-sea-colors {
+    --#{$prefix}#{$color}: #{$value};
+  }
 
   @each $color, $value in $grays {
     --#{$prefix}gray-#{$color}: #{$value};

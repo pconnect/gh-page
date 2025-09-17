@@ -96,6 +96,7 @@ $color-contrast-light: $white !default;
 
 $senioangel-green-100: tint-color($senioangel-green, 80%) !default;
 $senioangel-green-200: tint-color($senioangel-green, 60%) !default;
+
 $senioangel-green-300: tint-color($senioangel-green, 40%) !default;
 $senioangel-green-400: tint-color($senioangel-green, 20%) !default;
 $senioangel-green-500: $senioangel-green !default;
@@ -404,6 +405,19 @@ $dark: $senioangel-blue !default;
 $gray-50: $gray-50 !default;
 $gray-100: $gray-100 !default;
 $gray-200: $gray-200 !default;
+$senioangel-green-300: $senioangel-green-300 !default;
+$senioangel-green-500: $senioangel-green-500 !default;
+$senioangel-green-600: $senioangel-green-600 !default;
+$senioangel-green-700: $senioangel-green-700 !default;
+$senioangel-green-800: $senioangel-green-800 !default;
+$senioangel-green-900: $senioangel-green-900 !default;
+$senioangel-blue-300: $senioangel-blue-300 !default;
+$senioangel-blue-500: $senioangel-blue-500 !default;
+$senioangel-blue-600: $senioangel-blue-600 !default;
+$senioangel-blue-700: $senioangel-blue-700 !default;
+$senioangel-blue-800: $senioangel-blue-800 !default;
+$senioangel-blue-900: $senioangel-blue-900 !default;
+$greek-sea-300: $greek-sea-300 !default;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -423,6 +437,18 @@ $theme-colors: (
   "gray-50": $gray-50,
   "gray-100": $gray-100,
   "gray-200": $gray-200,
+  "senioangel-green-300": $senioangel-green-300,
+  "senioangel-green-500": $senioangel-green-500,
+  "senioangel-green-600": $senioangel-green-600,
+  "senioangel-green-700": $senioangel-green-700,
+  "senioangel-green-800": $senioangel-green-800,
+  "senioangel-green-900": $senioangel-green-900,
+  "senioangel-blue-300": $senioangel-blue-300,
+  "senioangel-blue-500": $senioangel-blue-500,
+  "senioangel-blue-600": $senioangel-blue-600,
+  "senioangel-blue-700": $senioangel-blue-700,
+  "senioangel-blue-800": $senioangel-blue-800,
+  "senioangel-blue-900": $senioangel-blue-900,
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -560,7 +586,7 @@ $body-emphasis-color: $black !default;
 //
 // Style anchor elements.
 
-$link-color: $black !default;
+$link-color: #000000 !default;
 $link-decoration: underline !default;
 $link-shade-percentage: 20% !default;
 $link-hover-color: shift-color($link-color, $link-shade-percentage) !default;
@@ -600,8 +626,8 @@ $grid-breakpoints: (
 ) !default;
 // scss-docs-end grid-breakpoints
 
-@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
-@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+//@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+//@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
 
 // Grid containers
 //
@@ -617,7 +643,7 @@ $container-max-widths: (
 ) !default;
 // scss-docs-end container-max-widths
 
-@include _assert-ascending($container-max-widths, "$container-max-widths");
+//@include _assert-ascending($container-max-widths, "$container-max-widths");
 
 // Grid columns
 //
@@ -777,7 +803,11 @@ $display-font-sizes: (
   //80px
   5: 4rem,
   //64px
-  6: 2.5rem,
+  6: 3rem,
+  7: 2.5rem,
+  8: 2rem,
+  9: 1.5rem,
+  10: 1rem,
 ) !default;
 
 $display-font-family: null !default;
@@ -959,8 +989,10 @@ $btn-active-box-shadow: inset 0 3px 5px rgba($black, 0.125) !default;
 $btn-link-color: var(--#{$prefix}link-color) !default;
 $btn-link-hover-color: var(--#{$prefix}link-hover-color) !default;
 $btn-link-disabled-color: $gray-600 !default;
+
+$linkkontrastcolor: #cccccc;
 $btn-link-focus-shadow-rgb: to-rgb(
-  mix(color-contrast($link-color), $link-color, 15%)
+  mix($linkkontrastcolor, $link-color, 15%)
 ) !default;
 
 // Allows for customizing button radius independently from global border radius
@@ -1264,7 +1296,7 @@ $form-validation-states: (
     "tooltip-color": #fff,
     "tooltip-bg-color": var(--#{$prefix}danger),
     "focus-box-shadow": 0 0 $input-btn-focus-blur $input-focus-width
-      rgba(var(--#{$prefix}danger-rgb), $input-btn-focus-color-opacity),
+      rgba($danger, $input-btn-focus-color-opacity),
     "border-color": var(--#{$prefix}form-invalid-border-color),
   ),
 ) !default;
@@ -1353,23 +1385,23 @@ $navbar-toggler-border-radius: $btn-border-radius !default;
 $navbar-toggler-focus-width: $btn-focus-width !default;
 $navbar-toggler-transition: box-shadow 0.15s ease-in-out !default;
 
-$navbar-light-color: rgba(var(--#{$prefix}emphasis-color-rgb), 0.65) !default;
+$navbar-light-color: rgba(#cccccc, 0.65) !default;
 $navbar-light-hover-color: rgba(
-  var(--#{$prefix}emphasis-color-rgb),
+  #cccccc,
   0.8
 ) !default;
 $navbar-light-active-color: rgba(
-  var(--#{$prefix}emphasis-color-rgb),
+  #cccccc,
   1
 ) !default;
 $navbar-light-disabled-color: rgba(
-  var(--#{$prefix}emphasis-color-rgb),
+  #cccccc,
   0.3
 ) !default;
 $navbar-light-icon-color: $gray-900 !default;
 $navbar-light-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-icon-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
 $navbar-light-toggler-border-color: rgba(
-  var(--#{$prefix}emphasis-color-rgb),
+  #cccccc,
   0.15
 ) !default;
 $navbar-light-brand-color: $navbar-light-active-color !default;
@@ -1518,7 +1550,7 @@ $card-inner-border-radius: subtract(
 ) !default;
 $card-cap-padding-y: $card-spacer-y * 0.5 !default;
 $card-cap-padding-x: $card-spacer-x !default;
-$card-cap-bg: rgba(var(--#{$prefix}body-color-rgb), 0.03) !default;
+$card-cap-bg: rgba(#cccccc, 0.03) !default;
 $card-cap-color: null !default;
 $card-height: null !default;
 $card-color: null !default;
@@ -1619,6 +1651,7 @@ $popover-header-padding-y: 0.5rem !default;
 $popover-header-padding-x: $spacer !default;
 
 $popover-body-color: var(--#{$prefix}body-color) !default;
+$popover-body-color: #cccccc !default;
 $popover-body-padding-y: $spacer !default;
 $popover-body-padding-x: $spacer !default;
 
@@ -1640,7 +1673,7 @@ $toast-padding-x: 0.75rem !default;
 $toast-padding-y: 0.5rem !default;
 $toast-font-size: 0.875rem !default;
 $toast-color: null !default;
-$toast-background-color: rgba(var(--#{$prefix}body-bg-rgb), 0.85) !default;
+$toast-background-color: rgba(#cccccc, 0.85) !default;
 $toast-border-width: var(--#{$prefix}border-width) !default;
 $toast-border-color: var(--#{$prefix}border-color-translucent) !default;
 $toast-border-radius: var(--#{$prefix}border-radius) !default;
@@ -1649,7 +1682,7 @@ $toast-spacing: $container-padding-x !default;
 
 $toast-header-color: var(--#{$prefix}secondary-color) !default;
 $toast-header-background-color: rgba(
-  var(--#{$prefix}body-bg-rgb),
+  #cccccc,
   0.85
 ) !default;
 $toast-header-border-color: $toast-border-color !default;

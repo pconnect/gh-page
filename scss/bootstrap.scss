@@ -9,6 +9,7 @@
 @import "_variables-dark";
 @import "_maps";
 @import "_utilities";
+@import "_custom-variables";    // custom variables for senioangel main platform    
 
 // Layout & components
 @import "_root";
@@ -51,4 +52,4 @@
 // scss-docs-end import-stack
 
 @import "virtual-select";
-@import "custom-variables";
+//@import "_custom-variables";
