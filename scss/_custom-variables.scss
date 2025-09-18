@@ -3,7 +3,9 @@
   --senioangel-blue: #1e2841;
   --bs-body-color: #1e2841;
   --bs-body-secondary-bg: #f8f9fa;
+  --bs-gray-50:#f4f4f4
   --bs-gray-100: rgba(0, 0, 0, 0.05);
+  --bs-gray-150: #e4e6e8; // background for custom-select-button, custom-select-dropdown, and custom-select-options
   --bs-gray-200: #e4e4e4; //фокус на инпут,цвет body-secondary-bg,text-muted,
   --bs-gray-300: #dee2e6; //hover on card and accordion, hover on custom-select-button,
   --bs-gray-500: #adb5bd;
@@ -19,7 +21,7 @@ $gray-100: rgba(
   0,
   0.05
 ); // muted card background, input background, $form-select-bg, accordion background
-$gray-150: #e6e6e6; // background for custom-select-button, custom-select-dropdown, and custom-select-options
+
 $gray-300: #dee2e6;
 $gray-500: #adb5bd;
 $gray-600: #6c757d;
@@ -295,10 +297,11 @@ $text-meta-link-font-size: 0.8125rem; //13px
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      background-color: var(--bs-gray-200);
+      background-color: var(--bs-gray-150);
     }
 
     &:focus {
+      background-color: var(--bs-gray-150);
       outline: none;
       border-color: var(--senioangel-green);
     }
