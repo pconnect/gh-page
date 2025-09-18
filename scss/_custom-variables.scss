@@ -290,7 +290,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
     text-transform: uppercase;
     text-align: left;
     color: var(--bs-body-color);
-    background-color: var(--bs-gray-150);
+    background-color: var(--bs-gray-100);
     border: 1px solid var(--bs-gray-300);
     border-radius: 0.5rem;
     cursor: pointer;
@@ -301,7 +301,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
     }
 
     &:focus {
-      background-color: var(--bs-gray-150);
+      background-color: var(--bs-gray-100);
       outline: none;
       border-color: var(--senioangel-green);
     }
