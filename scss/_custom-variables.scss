@@ -3,8 +3,9 @@
   --senioangel-blue: #1e2841;
   --bs-body-color: #1e2841;
   --bs-body-secondary-bg: #f8f9fa;
-  --bs-gray-100: #f8f9fa;
-  --bs-gray-300: #dee2e6;
+  --bs-gray-100: rgba(0, 0, 0, 0.05);
+  --bs-gray-200: #e4e4e4; //фокус на инпут,цвет body-secondary-bg,text-muted,
+  --bs-gray-300: #dee2e6; //hover on card and accordion, hover on custom-select-button,
   --bs-gray-500: #adb5bd;
   --bs-gray-600: #6c757d;
 }
@@ -12,7 +13,13 @@ $senioangel-green: #6eb5b2;
 $senioangel-blue: #1e2841;
 $body-color: #1e2841;
 $body-secondary-bg: #f8f9fa;
-$gray-100: #f8f9fa;
+$gray-100: rgba(
+  0,
+  0,
+  0,
+  0.05
+); // muted card background, input background, $form-select-bg, accordion background
+$gray-150: #e6e6e6; // background for custom-select-button, custom-select-dropdown, and custom-select-options
 $gray-300: #dee2e6;
 $gray-500: #adb5bd;
 $gray-600: #6c757d;
@@ -281,14 +288,14 @@ $text-meta-link-font-size: 0.8125rem; //13px
     text-transform: uppercase;
     text-align: left;
     color: var(--bs-body-color);
-    background-color: var(--bs-gray-200);
+    background-color: var(--bs-gray-150);
     border: 1px solid var(--bs-gray-300);
     border-radius: 0.5rem;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      background-color: var(--bs-gray-300);
+      background-color: var(--bs-gray-200);
     }
 
     &:focus {
@@ -321,7 +328,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: var(--bs-gray-200);
+    background-color: var(--bs-gray-150);
     border: 1px solid var(--bs-gray-500);
     border-top: none;
     border-radius: 0 0 0.5rem 0.5rem;
@@ -346,7 +353,7 @@ $text-meta-link-font-size: 0.8125rem; //13px
     text-transform: uppercase;
     text-align: left;
     color: var(--bs-body-color);
-    background-color: var(--bs-gray-200);
+    background-color: var(--bs-gray-150);
     border: none;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
